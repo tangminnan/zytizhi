@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/css/css.css" type="text/css">
+<title>中医体质调查问卷</title>
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/Font.js"></script>
+<script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+	<div class="name">
+		<div class="pre">
+			<a class="shangyiti" style="font-size: .3rem;">< 上一题</a>
+			<progress value="50" max="100" id="jindu"></progress>
+			<span id="jindulv">50%</span>
+		</div>
+		<div class="bianbian" id="titl" style="margin-left: .3rem;">
+		<!--	<h3>每天看手机的时长多少？（单选）</h3>
+			<ul id="titlchoose">
+				&lt;!&ndash; <li class="on">20分钟</li>
+				<li>30分钟</li>
+				<li>1小时</li> &ndash;&gt;
+			</ul>-->
+		</div>
+		<input class="btn" type="button" value="继续答题"/>
+		
+		<input th:value="${id}" id="chanpinId" type="hidden" />	
+		<input th:value="${uname}" id="uname" type="hidden" />
+		<input th:value="${identityCard}" id="identityCard" type="hidden" />
+		<input th:value="${phone}" id="phone" type="hidden" />
+
+		<input th:value="${jiguan}" id="jiguan" type="hidden" />
+		<input th:value="${birthAddress}" id="birthAddress" type="hidden" />
+		<input th:value="${homeAddress}" id="homeAddress" type="hidden" />
+		<input th:value="${homeYear}" id="homeYear" type="hidden" />
+		<input th:value="${height}" id="height" type="hidden" />
+		<input th:value="${weight}" id="weight" type="hidden" />
+		<input th:value="${yaowei}" id="yaowei" type="hidden" />
+
+
+		<input th:value="${cpchang}" id="cpchang" type="hidden" />
+		<input th:value="${num}" id="num" type="hidden" />
+		<input th:value="${sort}" id="sort" type="hidden" />
+		
+	</div>
+	<div id="jiazai"><img alt="" src="/images/loading-2.gif" style="padding-top: 3rem;padding-left: 46%; display: none;"></div>
+
+	<script type="text/javascript">
+
+
+        var datas = [];
+        $.ajax({
+            cache:true,
+            type:"get",
+            url:"/wenjian/timuxiangq",
+            data:{id:$("input[id='chanpinId']").val()},
+            success:function(data){
+                console.info(data);
+				if (data.length>0){
+                    for (var j = 0; j < data.length; j++) {
+                        datas.push(data[j]);
+                    }
+                    title(data,0);
+				}
+
+            }
+        })
+
+
+        var titlelist=[];var hui=[];
+        var titlexinxi=[
+            {titleId:0,titleName:"姓名",titleType:1,remarks:$("input[id='uname']").val()},
+            {titleId:0,titleName:"身份证号",titleType:1,remarks:$("input[id='identityCard']").val()},
+            {titleId:0,titleName:"手机号",titleType:1,remarks:$("input[id='phone']").val()},
+            {titleId:0,titleName:"籍贯",titleType:1,remarks:$("input[id='jiguan']").val()},
+            {titleId:0,titleName:"出生地",titleType:1,remarks:$("input[id='birthAddress']").val()},
+            {titleId:0,titleName:"常住地",titleType:1,remarks:$("input[id='homeAddress']").val()},
+            {titleId:0,titleName:"居住年数",titleType:1,remarks:$("input[id='homeYear']").val()},
+            {titleId:0,titleName:"身高",titleType:1,remarks:$("input[id='height']").val()},
+            {titleId:0,titleName:"体重",titleType:1,remarks:$("input[id='weight']").val()},
+            {titleId:0,titleName:"腰围",titleType:1,remarks:$("input[id='yaowei']").val()},
+        ];
+
+
+        $("#num").val(0);
+        $("#sort").val(1);
+        document.getElementById("jindu").setAttribute("max",$("input[id='cpchang']").val());
+        document.getElementById("jindu").setAttribute("value",0);
+        $("#jindulv").text("0%");
+        $("input[class='btn']").click(function(){
+            var shuo = $(".bianbian .on").html();
+            if($("#tittype").val() == 1 || $("#tittype").val() == 2){
+                var lth = $(".on").length;
+                if(lth<=0){
+//                    if( $("#timuId")!=61 || $("#timuId")!=62) {
+                        alert("请选择！！！");
+                        return false;
+//                    }
+                }
+                var k = 0;
+                var xarry=[];
+               $(".on input[name='kong']").each(function(index,element){
+                    if($(element).val().trim() == '' ){
+                        k++;
+                    }else{
+						xarry.push($(element).val());
+					}
+
+
+                })
+                if(k>0){
+                    alert("不能有空值！！！");
+                    return false;
+               }
+            }
+            var cpchang = $("input[id='cpchang']").val();
+            var num = $("#num").val();
+            num++;
+
+            if(num>=cpchang){
+                var remarkss=[];
+                var reid=[];
+                var sortss=[];
+                if($("#tittype").val() == 1){
+
+
+
+                        var shuo = $(".bianbian .on").text();
+                        var shuov = $(".bianbian .on").next().children("#kong").val();
+
+                        remarkss.push(shuo+"("+shuov+")");
+                        sortss.push(shuo+"("+shuov+")");
+                    reid.push($(".bianbian .on").val());
+
+                }
+                if($("#tittype").val() == 2){
+                    $(".bianbian .on").each(function(){
+
+
+                            var shuo = $(this).text();
+                            var shuov = $(this).next().children("#kong").val();
+
+                            remarkss.push(shuo);
+                            sortss.push(shuo);
+
+                        reid.push($(this).val());
+                    })
+                }
+                var cc=[];
+                if($("#tittype").val() == 3){
+                    //console.info($(".bianbian li").contents());
+                    var kk = $(".bianbian li").contents();
+                    for(var i = 0;i<kk.length;i++){
+                        if(kk[i].id == "kong"){
+                            cc.push("("+kk[i].value+")");
+                        }else{
+                            cc.push(kk[i].data);
+                        }
+                    }
+                    var str = cc.join("");
+                    cc = null;
+                    //console.info(str);
+                    remarkss.push(str);
+                    sortss.push(str);
+                    $(".bianbian li").each(function(){
+                        reid.push($(this).val());
+                    })
+                }
+
+                titlelist.push({titleId:$("#timuId").val(),titleName:$("#timuName").val(),titleType:$("#tittype").val(),remarks:remarkss.join("--"),chooseIds:reid.join(","),chooseSort:sortss.join("--")});
+
+                tijiao();
+                //alert("提交");
+            }else{
+                $("#num").val(num);
+                var remarkss=[];
+                var reid=[];
+                var sortss=[];
+               if($("#tittype").val() == 1){
+				   var shuo = $(".bianbian .on").text();
+				   if(xarry.length>0) {
+                       shuo = createNewStr(shuo, xarry);
+                   }
+				   remarkss.push(shuo);
+				   sortss.push(shuo);
+				   reid.push($(".bianbian .on").val());
+                }
+                if($("#tittype").val() == 2){
+                    $(".bianbian .on").each(function(){
+						var shuo = $(this).text();
+						if(xarry.length>0 && shuo.indexOf("（")>0) {
+                            shuo = createNewStr(shuo, xarry);
+                            xarry=[];
+                        }
+						remarkss.push(shuo);
+						sortss.push(shuo);
+						reid.push($(this).val());
+                    })
+                }
+                var cc=[];
+                if($("#tittype").val() == 3){
+                    //console.info($(".bianbian li").contents());
+                    var kk = $(".bianbian li").contents();
+                    for(var i = 0;i<kk.length;i++){
+                        if(kk[i].id == "kong"){
+                            cc.push("("+kk[i].value+")");
+                        }else{
+                            cc.push(kk[i].data);
+                        }
+                    }
+                    var str = cc.join("");
+                    cc = null;
+                    //console.info(str);
+                    remarkss.push(str);
+                    sortss.push(str);
+                    $(".bianbian li").each(function(){
+                        reid.push($(this).val());
+                    })
+                }
+//                $("input[id='kong']").each(function(){
+//                    $(this).attr('value', $(this).val());
+//                })
+                hui.push($("#titl").html());
+                titlelist.push({titleId:$("#timuId").val(),titleName:$("#timuName").val(),titleType:$("#tittype").val(),remarks:remarkss.join("--"),chooseIds:reid.join(","),chooseSort:sortss.join("--")});
+                document.getElementById("jindu").setAttribute("max",cpchang);
+                document.getElementById("jindu").setAttribute("value",$("#num").val());
+                var jinlv = Math.floor($("#num").val()/cpchang*100);
+                $("#jindulv").text(jinlv+"%");
+                title(datas,$("#num").val());
+            }
+        })
+
+        $(".shangyiti").click(function(){
+            var num = $("#num").val();
+            num--;
+            if(num<=-1){
+                alert("当前已经到第一题啦！！！");
+                return false;
+            }
+            $("#num").val(titlelist.length-1);
+            $("#titl").html(hui[hui.length-1]);
+			fillInTheInput(titlelist.pop(),hui.pop());
+        })
+
+
+        function title(data,i) {
+
+
+            var html = '';
+            if (data[i].chanpin.type == 1) {
+                html += '<input value="' + data[i].chanpin.type + '" id="tittype" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.timuName + '" id="timuName" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.id + '" id="timuId" type="hidden" />'
+                html += '<h3>' + data[i].chanpin.timuName + '（单选）</h3>'
+
+            }
+            if (data[i].chanpin.type == 2) {
+                html += '<input value="' + data[i].chanpin.type + '" id="tittype" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.timuName + '" id="timuName" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.id + '" id="timuId" type="hidden" />'
+                html += '<h3>' + data[i].chanpin.timuName + '（多选）</h3>'
+            }
+            if (data[i].chanpin.type == 3) {
+                html += '<input value="' + data[i].chanpin.type + '" id="tittype" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.timuName + '" id="timuName" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.id + '" id="timuId" type="hidden" />'
+                html += '<h3>' + data[i].chanpin.timuName + '</h3>'
+            }
+            if (data[i].chanpin.type == 4) {
+                html += '<input value="' + data[i].chanpin.type + '" id="tittype" type="hidden" />'
+                html += '<input value="说明" id="timuName" type="hidden" />'
+                html += '<input value="' + data[i].chanpin.id + '" id="timuId" type="hidden" />'
+                html += '<h3>' + data[i].chanpin.timuName + '</h3>'
+
+            }
+            html += '<ul id="titlchoose">'
+
+            if (data[i].chanpin.type != 4) {
+
+				for (var j = 0; j < data[i].details[0].length; j++) {
+				    var str1= data[i].details[0][j].chooseName;
+                    if (data[i].chanpin.type == 1) {
+								if(str1.match(/\（(.+?)\）/g)) {
+                                    str1 = str1.replace(/\（(.+?)\）/g, '（<input name="kong" type="text" style="height: .5rem;width: 1.5rem;line-height: 1rem;font-size: .25rem;" />）');
+
+								}
+								if(str1.match(/\[(.+?)\]/g)) {
+									str1 = str1.replace(/\[(.+?)\]/g ,'（<input name="kong" type="text" style="height: .5rem;width: .6rem;line-height: 1rem;font-size: .25rem;" />）');
+								}
+
+                                    html += '<li value="' + data[i].details[0][j].id + '" id="dan" >'
+                                    html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
+                                    html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + str1 + '</li>'
+
+					}
+					if (data[i].chanpin.type == 3 ) {
+					/*	if (data[i].details[0][j].type == 1) {*/
+							var str1 = data[i].details[0][j].chooseName.after('<input id="kong" type="text" style="height: .5rem;width: 1rem;border-bottom: 1px solid #000;line-height: 1rem;font-size: .4rem;" />');
+							html += '<li value="' + data[i].details[0][j].id + '" >' + str1 + '</li>'
+					/*	}*/
+					}
+
+
+
+					if (data[i].chanpin.type == 2) {
+						   if(str1.match(/\（(.+?)\）/g)) {
+                                str1 = str1.replace(/\（(.+?)\）/g, '（<input name="kong" type="text" style="height: .5rem;width: 1.5rem;line-height: 1rem;font-size: .25rem;" />）');
+                            }
+							if(str1.match(/\[(.+?)\]/g)) {
+								str1 = str1.replace(/\[(.+?)\]/g ,'（<input name="kong" type="text" style="height: .5rem;width: .6rem;line-height: 1rem;font-size: .25rem;" />）');
+							}
+							html += '<li value="' + data[i].details[0][j].id + '" id="duo" >'
+                        	html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
+							html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + str1 + '</li>'
+
+					}
+				}
+			}
+            html += '</ul>';
+
+            $("#titl").html(html);
+
+		}
+
+
+
+        $(".bianbian").on('click','#dan',function(){
+            $(this).addClass("on").siblings().removeClass("on");
+
+            $(".bianbian .on").each(function(){
+                if($(this).children("#choosetype").val()==1){
+                    $("#shuom").show();
+                }else{
+                    $("#shuom").hide();
+                }
+            })
+
+        });
+
+
+
+        $(".bianbian").on('click','#duo',function(){
+            $(this).addClass("on");
+            $(".bianbian .on").each(function(){
+                if($(this).children("#choosetype").val()==1){
+                    $("#shuom").show();
+                }else{
+                    $("#shuom").hide();
+                }
+            })
+        });
+        $(".bianbian").on('click','.on',function(){
+            $(this).removeClass("on");
+            $(".bianbian .on").each(function(){
+                if($(this).children("#choosetype").val()==1){
+                    $("#shuom").show();
+                }else{
+                    $("#shuom").hide();
+                }
+            })
+        });
+
+
+        var chanpin={
+            chanpinId:$("input[id='chanpinId']").val(),
+            titlexinxi:titlexinxi,
+            titlelist:titlelist,
+        };
+
+        //在页面未加载完毕之前显示的loading Html自定义内容
+        var _LoadingHtml = '<div id="loadingDiv" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="/js/plugins/layer/skin/default/loading-0.gif" /></div></div>';
+        //呈现loading效果
+        document.write(_LoadingHtml);
+        function tijiao(){
+            //alert("提交中，请稍后!");
+            document.getElementById("loadingDiv").style.display="block";
+            $.ajax({
+                cathe:true,
+                type:"post",
+                url:"/save/datishuju",
+                dataType:'json',
+               contentType : "application/json",
+               data:JSON.stringify(chanpin),
+                beforeSend:function(XMLHttpRequest){
+                    $(".name").hide();
+                    $("#jiazai").show();
+                },
+                error:function(res){
+                },
+               success:function(data){
+                    if(data.code == 0){
+                        document.getElementById("loadingDiv").style.display="none";
+                        window.location.href="/shaichawenjuan/tijiaochenggong"
+                    }
+                },
+                complete: function (da) {
+                   $(".name").show();
+                    $("#jiazai").hide();
+                },
+
+            })
+
+        }
+	
+	//禁止ios返回键
+	history.pushState(null, null, document.URL); 
+		 window.addEventListener('popstate', function() {
+		 window.location.href='#';
+	});
+
+	
+	//禁止安卓手机物理返回键
+    XBack = {};
+ 
+	(function(XBack) {
+		XBack.STATE = 'x - back';
+		XBack.element;
+ 
+		XBack.onPopState = function(event) {
+			event.state === XBack.STATE && XBack.fire();
+			XBack.record(XBack.STATE); //初始化事件时，push一下
+		};
+ 
+		XBack.record = function(state) {
+			history.pushState(state, null, location.href);
+		};
+ 
+		XBack.fire = function() {
+			var event = document.createEvent('Events');
+			event.initEvent(XBack.STATE, false, false);
+			XBack.element.dispatchEvent(event);
+		};
+ 
+		XBack.listen = function(listener) {
+			XBack.element.addEventListener(XBack.STATE, listener, false);
+		};
+ 
+		XBack.init = function() {
+			XBack.element = document.createElement('span');
+			window.addEventListener('popstate', XBack.onPopState);
+			XBack.record(XBack.STATE);
+		};
+ 
+	})(XBack); // 引入这段js文件
+ 
+	XBack.init();
+	XBack.listen(function() {});
+	
+
+	function  createNewStr(oldstr,oldArray) {
+
+            var newArray=oldstr.split("（）");
+
+            for(var i=0;i<oldArray.length;i++){
+                var j= i==0?0:1;
+                newArray.splice(i+j+1,0,'（'+oldArray[i]+'）');
+            }
+		return newArray.join("");
+    }
+
+    function fillInTheInput(var1,var2) {
+        var remarks = var1.remarks;
+        var arry=[];
+        var str="",start=-1;
+		for(var j=0;j<remarks.length;j++){
+
+			if(remarks[j]=="（"){
+				start=0;
+			}
+			if(remarks[j]=="）"){
+			    start=-1;
+			}
+			if(start==0 && remarks[j]!="（"){
+			    str+=remarks[j];
+			}
+			if(start==-1 && str.length>0){
+			    arry.push(str);
+			    str="";
+			}
+		}
+
+        $("#titl").html("").append($(var2));
+		console.info(arry[0]);
+        console.info(arry[1])
+       $(".on").find("input[name='kong']").eq(0).val(arry[0]);
+        $(".on").find("input[name='kong']").eq(1).val(arry[1]);
+    }
+	</script>
+</body>
+</html>
+
