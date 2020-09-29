@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="/css/css.css" type="text/css">
-<title>儿童青少年健康调查问卷</title>
+<title>中医体质调查问卷</title>
 <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="/js/Font.js"></script>
 <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
@@ -21,12 +21,12 @@
 			<span id="jindulv">50%</span>
 		</div>
 		<div class="bianbian" id="titl" style="margin-left: .3rem;">
-			<h3>每天看手机的时长多少？（单选）</h3>
+		<!--	<h3>每天看手机的时长多少？（单选）</h3>
 			<ul id="titlchoose">
-				<!-- <li class="on">20分钟</li>
+				&lt;!&ndash; <li class="on">20分钟</li>
 				<li>30分钟</li>
-				<li>1小时</li> -->
-			</ul>
+				<li>1小时</li> &ndash;&gt;
+			</ul>-->
 		</div>
 		<input class="btn" type="button" value="继续答题"/>
 		
@@ -34,8 +34,16 @@
 		<input th:value="${uname}" id="uname" type="hidden" />
 		<input th:value="${identityCard}" id="identityCard" type="hidden" />
 		<input th:value="${phone}" id="phone" type="hidden" />
-		<input th:value="${sturelation}" id="sturelation" type="hidden" />
-		
+
+		<input th:value="${jiguan}" id="jiguan" type="hidden" />
+		<input th:value="${birthAddress}" id="birthAddress" type="hidden" />
+		<input th:value="${homeAddress}" id="homeAddress" type="hidden" />
+		<input th:value="${homeYear}" id="homeYear" type="hidden" />
+		<input th:value="${height}" id="height" type="hidden" />
+		<input th:value="${weight}" id="weight" type="hidden" />
+		<input th:value="${yaowei}" id="yaowei" type="hidden" />
+
+
 		<input th:value="${cpchang}" id="cpchang" type="hidden" />
 		<input th:value="${num}" id="num" type="hidden" />
 		<input th:value="${sort}" id="sort" type="hidden" />
@@ -52,10 +60,8 @@
             type:"get",
             url:"/wenjian/timuxiangq",
             data:{id:$("input[id='chanpinId']").val()},
-            error:function(res){
-            },
             success:function(data){
-                //console.info(data);
+                console.info(data);
 				if (data.length>0){
                     for (var j = 0; j < data.length; j++) {
                         datas.push(data[j]);
@@ -72,7 +78,13 @@
             {titleId:0,titleName:"姓名",titleType:1,remarks:$("input[id='uname']").val()},
             {titleId:0,titleName:"身份证号",titleType:1,remarks:$("input[id='identityCard']").val()},
             {titleId:0,titleName:"手机号",titleType:1,remarks:$("input[id='phone']").val()},
-            {titleId:0,titleName:"与学生关系",titleType:1,remarks:$("input[id='sturelation']").val()}
+            {titleId:0,titleName:"籍贯",titleType:1,remarks:$("input[id='jiguan']").val()},
+            {titleId:0,titleName:"出生地",titleType:1,remarks:$("input[id='birthAddress']").val()},
+            {titleId:0,titleName:"常住地",titleType:1,remarks:$("input[id='homeAddress']").val()},
+            {titleId:0,titleName:"居住年数",titleType:1,remarks:$("input[id='homeYear']").val()},
+            {titleId:0,titleName:"身高",titleType:1,remarks:$("input[id='height']").val()},
+            {titleId:0,titleName:"体重",titleType:1,remarks:$("input[id='weight']").val()},
+            {titleId:0,titleName:"腰围",titleType:1,remarks:$("input[id='yaowei']").val()},
         ];
 
 
@@ -82,79 +94,61 @@
         document.getElementById("jindu").setAttribute("value",0);
         $("#jindulv").text("0%");
         $("input[class='btn']").click(function(){
+            var shuo = $(".bianbian .on").html();
             if($("#tittype").val() == 1 || $("#tittype").val() == 2){
                 var lth = $(".on").length;
                 if(lth<=0){
-                    alert("请选择！！！");
-                    return false;
+//                    if( $("#timuId")!=61 || $("#timuId")!=62) {
+                        alert("请选择！！！");
+                        return false;
+//                    }
                 }
-            }
-            if($("#tittype").val() == 3){
                 var k = 0;
-                $("input[id='kong']").each(function(){
-                    if($(this).val().trim() == '' ){
+                var xarry=[];
+               $(".on input[name='kong']").each(function(index,element){
+                    if($(element).val().trim() == '' ){
                         k++;
-                    }
+                    }else{
+						xarry.push($(element).val());
+					}
+
+
                 })
                 if(k>0){
                     alert("不能有空值！！！");
                     return false;
-                }
+               }
             }
-
-            /* if($("#tittype").val() != 4){
-                var sort = $("#sort").val();
-                sort++;
-                $("#sort").val(sort);
-            } */
-
             var cpchang = $("input[id='cpchang']").val();
             var num = $("#num").val();
             num++;
+
             if(num>=cpchang){
                 var remarkss=[];
                 var reid=[];
                 var sortss=[];
                 if($("#tittype").val() == 1){
 
-                    var choosetype = $(".bianbian .on").children("#choosetype").val();
-                    if(choosetype == 1){
+
+
                         var shuo = $(".bianbian .on").text();
                         var shuov = $(".bianbian .on").next().children("#kong").val();
 
                         remarkss.push(shuo+"("+shuov+")");
                         sortss.push(shuo+"("+shuov+")");
-                    }else{
-                        remarkss.push($(".bianbian .on").text());
-                        var sorts = $(".bianbian .on").children("#sorts").val();
-                        sortss.push(sorts);
-                        var jumpFlag = $(".bianbian .on").children("#jumpFlag").val();
-                        if(jumpFlag==1){
-                            var jumpTitleId = $(".bianbian .on").children("#jumpTitleId").val();
-                            for(var i = 0 ;i<datas.chanpin;i++){
-                                if(jumpTitleId == datas[i].id){
-                                    $("#num").val(i);
-                                }
-                            }
-                        }
-                    }
                     reid.push($(".bianbian .on").val());
 
                 }
                 if($("#tittype").val() == 2){
                     $(".bianbian .on").each(function(){
-                        var choosetype = $(this).children().eq(0).val();
-                        if(choosetype == 1){
+
+
                             var shuo = $(this).text();
                             var shuov = $(this).next().children("#kong").val();
 
-                            remarkss.push(shuo+"("+shuov+")");
-                            sortss.push(shuo+"("+shuov+")");
-                        }else{
-                            remarkss.push($(this).text());
-                            var sorts = $(this).children("#sorts").val();
-                            sortss.push(sorts);
-                        }
+                            remarkss.push(shuo);
+                            sortss.push(shuo);
+
                         reid.push($(this).val());
                     })
                 }
@@ -188,47 +182,25 @@
                 var remarkss=[];
                 var reid=[];
                 var sortss=[];
-                if($("#tittype").val() == 1){
-
-                    var choosetype = $(".bianbian .on").children("#choosetype").val();
-                    if(choosetype == 1){
-                        var shuo = $(".bianbian .on").text();
-                        var shuov = $(".bianbian .on").next().children("#kong").val();
-
-                        remarkss.push(shuo+"("+shuov+")");
-                        sortss.push(shuo+"("+shuov+")");
-                    }else{
-                        remarkss.push($(".bianbian .on").text());
-                        var sorts = $(".bianbian .on").children("#sorts").val();
-                        sortss.push(sorts);
-                        var jumpFlag = $(".bianbian .on").children("#jumpFlag").val();
-                        if(jumpFlag==1){
-                            var jumpTitleId = $(".bianbian .on").children("#jumpTitleId").val();
-                            for(var i = 0 ;i<datas.chanpin.length;i++){
-                                if(jumpTitleId == datas[i].id){
-                                    $("#num").val(i);
-                                }
-                            }
-                        }
-                    }
-                    reid.push($(".bianbian .on").val());
-
+               if($("#tittype").val() == 1){
+				   var shuo = $(".bianbian .on").text();
+				   if(xarry.length>0) {
+                       shuo = createNewStr(shuo, xarry);
+                   }
+				   remarkss.push(shuo);
+				   sortss.push(shuo);
+				   reid.push($(".bianbian .on").val());
                 }
                 if($("#tittype").val() == 2){
                     $(".bianbian .on").each(function(){
-                        var choosetype = $(this).children().eq(0).val();
-                        if(choosetype == 1){
-                            var shuo = $(this).text();
-                            var shuov = $(this).next().children("#kong").val();
-
-                            remarkss.push(shuo+"("+shuov+")");
-                            sortss.push(shuo+"("+shuov+")");
-                        }else{
-                            remarkss.push($(this).text());
-                            var sorts = $(this).children("#sorts").val();
-                            sortss.push(sorts);
+						var shuo = $(this).text();
+						if(xarry.length>0 && shuo.indexOf("（")>0) {
+                            shuo = createNewStr(shuo, xarry);
+                            xarry=[];
                         }
-                        reid.push($(this).val());
+						remarkss.push(shuo);
+						sortss.push(shuo);
+						reid.push($(this).val());
                     })
                 }
                 var cc=[];
@@ -251,9 +223,9 @@
                         reid.push($(this).val());
                     })
                 }
-                $("input[id='kong']").each(function(){
-                    $(this).attr('value', $(this).val());
-                })
+//                $("input[id='kong']").each(function(){
+//                    $(this).attr('value', $(this).val());
+//                })
                 hui.push($("#titl").html());
                 titlelist.push({titleId:$("#timuId").val(),titleName:$("#timuName").val(),titleType:$("#tittype").val(),remarks:remarkss.join("--"),chooseIds:reid.join(","),chooseSort:sortss.join("--")});
                 document.getElementById("jindu").setAttribute("max",cpchang);
@@ -262,8 +234,6 @@
                 $("#jindulv").text(jinlv+"%");
                 title(datas,$("#num").val());
             }
-            //console.info(titlelist);
-            //console.info(hui);
         })
 
         $(".shangyiti").click(function(){
@@ -275,15 +245,12 @@
             }
             $("#num").val(titlelist.length-1);
             $("#titl").html(hui[hui.length-1]);
-
-            titlelist.pop();
-            hui.pop();
-
+			fillInTheInput(titlelist.pop(),hui.pop());
         })
 
 
         function title(data,i) {
-            //console.info(data[i]);
+
 
             var html = '';
             if (data[i].chanpin.type == 1) {
@@ -317,41 +284,41 @@
             if (data[i].chanpin.type != 4) {
 
 				for (var j = 0; j < data[i].details[0].length; j++) {
-					if (data[i].chanpin.type == 1) {
-						if (data[i].details[0][j].type == 1) {
-							var str1 = data[i].details[0][j].chooseName.replace(/_/g, "");
-							html += '<li value="' + data[i].details[0][j].id + '" id="dan" >'
-							html += '<input value="' + data[i].details[0][j].jumpFlag + '" id="jumpFlag" type="hidden" />'
-							html += '<input value="' + data[i].details[0][j].jumpTitleId + '" id="jumpTitleId" type="hidden" />'
-                            html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
-							html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + str1 + '</li>'
-							html += '<li id="shuom" style="display:none;"><input id="kong" type="text" style="height: .5rem;width: 5rem;border-bottom: 1px solid #000;line-height: 1rem;font-size: .4rem;" /></li>'
+				    var str1= data[i].details[0][j].chooseName;
+                    if (data[i].chanpin.type == 1) {
+								if(str1.match(/\（(.+?)\）/g)) {
+                                    str1 = str1.replace(/\（(.+?)\）/g, '（<input name="kong" type="text" style="height: .5rem;width: 1.5rem;line-height: 1rem;font-size: .25rem;" />）');
 
-						} else {
-							html += '<li value="' + data[i].details[0][j].id + '" id="dan" >'
-							html += '<input value="' + data[i].details[0][j].jumpFlag + '" id="jumpFlag" type="hidden" />'
-							html += '<input value="' + data[i].details[0][j].jumpTitleId + '" id="jumpTitleId" type="hidden" />'
-                            html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
-							html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + data[i].details[0][j].chooseName + '</li>'
-						}
+								}
+								if(str1.match(/\[(.+?)\]/g)) {
+									str1 = str1.replace(/\[(.+?)\]/g ,'（<input name="kong" type="text" style="height: .5rem;width: .6rem;line-height: 1rem;font-size: .25rem;" />）');
+								}
+
+                                    html += '<li value="' + data[i].details[0][j].id + '" id="dan" >'
+                                    html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
+                                    html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + str1 + '</li>'
+
 					}
-					if (data[i].chanpin.type == 3) {
-						if (data[i].details[0][j].type == 1) {
-							var str1 = data[i].details[0][j].chooseName.replace(/_/g, '<input id="kong" type="text" style="height: .5rem;width: 1rem;border-bottom: 1px solid #000;line-height: 1rem;font-size: .4rem;" />');
+					if (data[i].chanpin.type == 3 ) {
+					/*	if (data[i].details[0][j].type == 1) {*/
+							var str1 = data[i].details[0][j].chooseName.after('<input id="kong" type="text" style="height: .5rem;width: 1rem;border-bottom: 1px solid #000;line-height: 1rem;font-size: .4rem;" />');
 							html += '<li value="' + data[i].details[0][j].id + '" >' + str1 + '</li>'
-						}
+					/*	}*/
 					}
+
+
+
 					if (data[i].chanpin.type == 2) {
-						if (data[i].details[0][j].type == 1) {
-							var str1 = data[i].details[0][j].chooseName.replace(/_/g, "");
+						   if(str1.match(/\（(.+?)\）/g)) {
+                                str1 = str1.replace(/\（(.+?)\）/g, '（<input name="kong" type="text" style="height: .5rem;width: 1.5rem;line-height: 1rem;font-size: .25rem;" />）');
+                            }
+							if(str1.match(/\[(.+?)\]/g)) {
+								str1 = str1.replace(/\[(.+?)\]/g ,'（<input name="kong" type="text" style="height: .5rem;width: .6rem;line-height: 1rem;font-size: .25rem;" />）');
+							}
 							html += '<li value="' + data[i].details[0][j].id + '" id="duo" >'
+                        	html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
 							html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + str1 + '</li>'
-							html += '<li id="shuom" style="display:none;"><input id="kong" type="text" style="height: .5rem;width: 5rem;border-bottom: 1px solid #000;line-height: 1rem;font-size: .4rem;" /></li>'
-						} else {
-							html += '<li value="' + data[i].details[0][j].id + '" id="duo" >'
-                            html += '<input value="' + data[i].details[0][j].sort + '" id="sorts" type="hidden" />'
-							html += '<input value="' + data[i].details[0][j].type + '" id="choosetype" type="hidden" />' + data[i].details[0][j].chooseName + '</li>'
-						}
+
 					}
 				}
 			}
@@ -367,7 +334,6 @@
             $(this).addClass("on").siblings().removeClass("on");
 
             $(".bianbian .on").each(function(){
-                //console.info($(this).attr("class"));
                 if($(this).children("#choosetype").val()==1){
                     $("#shuom").show();
                 }else{
@@ -407,28 +373,34 @@
             titlelist:titlelist,
         };
 
+        //在页面未加载完毕之前显示的loading Html自定义内容
+        var _LoadingHtml = '<div id="loadingDiv" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="/js/plugins/layer/skin/default/loading-0.gif" /></div></div>';
+        //呈现loading效果
+        document.write(_LoadingHtml);
         function tijiao(){
-
+            //alert("提交中，请稍后!");
+            document.getElementById("loadingDiv").style.display="block";
             $.ajax({
                 cathe:true,
                 type:"post",
                 url:"/save/datishuju",
                 dataType:'json',
-                contentType : "application/json",
-                data:JSON.stringify(chanpin),
+               contentType : "application/json",
+               data:JSON.stringify(chanpin),
                 beforeSend:function(XMLHttpRequest){
                     $(".name").hide();
                     $("#jiazai").show();
                 },
                 error:function(res){
                 },
-                success:function(data){
+               success:function(data){
                     if(data.code == 0){
+                        document.getElementById("loadingDiv").style.display="none";
                         window.location.href="/shaichawenjuan/tijiaochenggong"
                     }
                 },
                 complete: function (da) {
-                    $(".name").show();
+                   $(".name").show();
                     $("#jiazai").hide();
                 },
 
@@ -480,10 +452,45 @@
 	XBack.init();
 	XBack.listen(function() {});
 	
-	//取消
-	//window.removeEventListener('popstate',function(){}); 
 
-	
+	function  createNewStr(oldstr,oldArray) {
+
+            var newArray=oldstr.split("（）");
+
+            for(var i=0;i<oldArray.length;i++){
+                var j= i==0?0:1;
+                newArray.splice(i+j+1,0,'（'+oldArray[i]+'）');
+            }
+		return newArray.join("");
+    }
+
+    function fillInTheInput(var1,var2) {
+        var remarks = var1.remarks;
+        var arry=[];
+        var str="",start=-1;
+		for(var j=0;j<remarks.length;j++){
+
+			if(remarks[j]=="（"){
+				start=0;
+			}
+			if(remarks[j]=="）"){
+			    start=-1;
+			}
+			if(start==0 && remarks[j]!="（"){
+			    str+=remarks[j];
+			}
+			if(start==-1 && str.length>0){
+			    arry.push(str);
+			    str="";
+			}
+		}
+
+        $("#titl").html("").append($(var2));
+		console.info(arry[0]);
+        console.info(arry[1])
+       $(".on").find("input[name='kong']").eq(0).val(arry[0]);
+        $(".on").find("input[name='kong']").eq(1).val(arry[1]);
+    }
 	</script>
 </body>
 </html>

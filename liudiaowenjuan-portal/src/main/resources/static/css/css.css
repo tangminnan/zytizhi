@@ -47,6 +47,7 @@ progress::-moz-progress-bar {
 .DLbox h3{text-align: center;font-weight: bold;font-size: .6rem;color: #0388f9;background:url(../images/ling.png) no-repeat bottom center;-webkit-background-size:3.5rem .04rem;background-size:3.5rem .04rem;padding-bottom:.2rem;letter-spacing:2px;margin-bottom: 1rem;}
 .DLbox .inBox{margin-bottom:.5rem;}
 .DLbox .inBox input{display: block;width: 100%;background: #fff;height: 1rem;border:.02rem solid #0388f9;border-radius:.5rem;margin-bottom:.36rem;text-align: center;font-size: .3rem;outline: none;}
+.ppt{display: block;width: 100%;background: #fff;height: 1rem;border:.02rem solid #0388f9;border-radius:.5rem;margin-bottom:.36rem;text-align: center;font-size: .3rem;outline: none;}
 .DLbox dl{font-size: .24rem;line-height:.36rem;}
 .DLbox dl dt{color: #0388f9;}
 .DLbox .copy{text-align: center;font-size: .2rem;color: #018cf8;}

@@ -1,5 +1,7 @@
 package com.liudiaowenjuan.information.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,66 +10,77 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.liudiaowenjuan.common.utils.R;
-import com.liudiaowenjuan.information.domain.ChanpinDetailsDO;
-import com.liudiaowenjuan.information.domain.ChanpinListDO;
-import com.liudiaowenjuan.information.domain.ChanpinRecordDetailsDO;
-import com.liudiaowenjuan.information.domain.ChanpinRecordListDO;
-import com.liudiaowenjuan.information.domain.ChanpinTitleChooseDO;
-import com.liudiaowenjuan.information.service.ChanpinDetailsService;
-import com.liudiaowenjuan.information.service.ChanpinListService;
-import com.liudiaowenjuan.information.service.ChanpinRecordDetailsService;
-import com.liudiaowenjuan.information.service.ChanpinRecordListService;
-import com.liudiaowenjuan.information.service.ChanpinTitleChooseService;
+import com.liudiaowenjuan.information.domain.ZhongyiDetailsDO;
+import com.liudiaowenjuan.information.domain.ZhongyiListDO;
+import com.liudiaowenjuan.information.domain.ZhongyiRecordDetailsDO;
+import com.liudiaowenjuan.information.domain.ZhongyiRecordListDO;
+import com.liudiaowenjuan.information.domain.ZhongyiTitleChooseDO;
+import com.liudiaowenjuan.information.service.ZhongyiDetailsService;
+import com.liudiaowenjuan.information.service.ZhongyiListService;
+import com.liudiaowenjuan.information.service.ZhongyiRecordDetailsService;
+import com.liudiaowenjuan.information.service.ZhongyiRecordListService;
+import com.liudiaowenjuan.information.service.ZhongyiTitleChooseService;
 
 @Controller
 public class indexController {
 	
 	@Autowired
-	ChanpinListService chanpinListService;
+	ZhongyiListService zhongyiListService;
 	@Autowired
-	ChanpinDetailsService chanpinDetailsService;
+	ZhongyiDetailsService zhongyiDetailsService;
 	@Autowired
-	ChanpinTitleChooseService chanpinTitleChooseService;
+	ZhongyiTitleChooseService zhongyiTitleChooseService;
 	@Autowired
-	ChanpinRecordListService chanpinRecordListService;
+	ZhongyiRecordListService zhongyiRecordListService;
 	@Autowired
-	ChanpinRecordDetailsService chanpinRecordDetailsService;
-	
+	ZhongyiRecordDetailsService zhongyiRecordDetailsService;
+
 	@GetMapping("/index")
 	String index(Model model){
 		Map<String,Object> map = new HashMap<>();
 		map.put("status", "1");
- 		List<ChanpinListDO> list = chanpinListService.list(map);
- 		model.addAttribute("list",list);
+		List<ZhongyiListDO> list = zhongyiListService.list(map);
+		model.addAttribute("list",list);
 		return "information/wenjuan4";
 	}
-	
+
 	@GetMapping("/wenjuan/shouye")
 	String shouye(Model model,Integer id){
-		model.addAttribute("cplist",chanpinListService.get(id));
+
 		model.addAttribute("id",id);
 		return "information/shouye";
 	}
-	
-	
 	@GetMapping("/wenjian/kaishidati")
-	String kaishidati(Model model,Integer id,String uname, String identityCard, String phone,String sturelation){
+	String kaishidati(Model model,Integer id,String uname, String identityCard,
+					  String phone,String jiguan,
+					  String birthAddress,String homeAddress,String homeYear,
+					  Integer height,Double weight,Double yaowei
+						){
 		model.addAttribute("id",id);
 		model.addAttribute("uname",uname);
 		model.addAttribute("identityCard",identityCard);
 		model.addAttribute("phone",phone);
-		model.addAttribute("sturelation",sturelation);
-		
+		model.addAttribute("jiguan",jiguan);
+		model.addAttribute("birthAddress",birthAddress);
+		model.addAttribute("homeAddress",homeAddress);
+		model.addAttribute("homeYear",homeYear);
+		model.addAttribute("height",height);
+		model.addAttribute("weight",weight);
+		model.addAttribute("yaowei",yaowei);
+
 		Map<String,Object> map = new HashMap<>();
 		map.put("chanpinId", id);
-		int list = chanpinDetailsService.count(map);
+		int list = zhongyiDetailsService.count(map);
 		model.addAttribute("cpchang",list);
-		return "information/wenjuan5";
+
+			return "information/wenjuan5";
+
+
 	}
+
+
 
 	@GetMapping("/wenjian/timuxiangq")
 	@ResponseBody
@@ -75,13 +88,13 @@ public class indexController {
 		List<Map<String,Object>> bb = new ArrayList<Map<String,Object>>();
 		Map<String,Object> map1 = new HashMap<>();
 		map1.put("chanpinId",id);
-		List<ChanpinDetailsDO> list1 = chanpinDetailsService.list(map1);
-		for (ChanpinDetailsDO ard : list1 ) {
+		List<ZhongyiDetailsDO> list1 = zhongyiDetailsService.list(map1);
+		for (ZhongyiDetailsDO ard : list1 ) {
 			Map<String,Object> map3 = new HashMap<>();
 			List<Object> ll = new ArrayList<>();
 			Map<String,Object> map2 = new HashMap<>();
 			map2.put("timuId",ard.getId());
-			ll.add(chanpinTitleChooseService.list(map2));
+			ll.add(zhongyiTitleChooseService.list(map2));
 			map3.put("chanpin",ard);
 			map3.put("details",ll);
 			bb.add(map3);
@@ -91,42 +104,52 @@ public class indexController {
 	
 	@GetMapping("/querywenjuan/chanpinDetails")
 	@ResponseBody
-	List<ChanpinDetailsDO> chanpinDetails(Integer id){
+	List<ZhongyiDetailsDO> chanpinDetails(Integer id){
 		Map<String,Object> map = new HashMap<>();
 		map.put("chanpinId", id);
-		List<ChanpinDetailsDO> list = chanpinDetailsService.list(map);
+		List<ZhongyiDetailsDO> list = zhongyiDetailsService.list(map);
 		return list;
 		
 	}
 	
 	@GetMapping("/querywenjuan/titleDetails")
 	@ResponseBody
-	List<ChanpinTitleChooseDO> titleDetails(Integer id){
+	List<ZhongyiTitleChooseDO> titleDetails(Integer id){
 		Map<String,Object> map = new HashMap<>();
 		map.put("timuId", id);
-		List<ChanpinTitleChooseDO> titleChooseDO = chanpinTitleChooseService.list(map);
+		List<ZhongyiTitleChooseDO> titleChooseDO = zhongyiTitleChooseService.list(map);
 		return titleChooseDO;
 		
 	}
 	
 	@PostMapping("/save/datishuju")
 	@ResponseBody
-	Map<String,Object> datishuju(@RequestBody ChanpinRecordListDO chanpin){
+	Map<String,Object> datishuju(@RequestBody ZhongyiRecordListDO chanpin){
+		System.out.println("================================================================");
+		List<ZhongyiRecordDetailsDO> titlelist1 = chanpin.getTitlelist();
+		for(ZhongyiRecordDetailsDO x : titlelist1){
+			System.out.println(x);
+		}
+		System.out.println("================================================================");
+		System.out.println("=================================================================");
+		List<ZhongyiRecordDetailsDO> titlexinxi2 = chanpin.getTitlexinxi();
+				titlexinxi2.forEach(System.out::print);
+		System.out.println("================================================================");
 		Map<String,Object> map = new HashMap<>();
-		ChanpinRecordListDO crl = new ChanpinRecordListDO();
-		List<ChanpinRecordDetailsDO> titlexinxi1 = chanpin.getTitlexinxi();
-		for (ChanpinRecordDetailsDO xinxi : titlexinxi1) {
+		ZhongyiRecordListDO crl = new ZhongyiRecordListDO();
+		List<ZhongyiRecordDetailsDO> titlexinxi1 = chanpin.getTitlexinxi();
+		for (ZhongyiRecordDetailsDO xinxi : titlexinxi1) {
 			if(xinxi.getTitleName().equals("身份证号")){
 				crl.setIdentityCard(xinxi.getRemarks());
 			}
 		}
 		crl.setChanpinId(chanpin.getChanpinId());
-		crl.setChanpinName(chanpinListService.get(chanpin.getChanpinId()).getChanpinName());
+		crl.setChanpinName(zhongyiListService.get(chanpin.getChanpinId()).getChanpinName());
 		crl.setAddTime(new Date());
-		if(chanpinRecordListService.save(crl)>0){
-			List<ChanpinRecordDetailsDO> titlexinxi = chanpin.getTitlexinxi();
-			for (ChanpinRecordDetailsDO xinxi : titlexinxi) {
-				ChanpinRecordDetailsDO crd = new ChanpinRecordDetailsDO();
+		if(zhongyiRecordListService.save(crl)>0){
+			List<ZhongyiRecordDetailsDO> titlexinxi = chanpin.getTitlexinxi();
+			for (ZhongyiRecordDetailsDO xinxi : titlexinxi) {
+				ZhongyiRecordDetailsDO crd = new ZhongyiRecordDetailsDO();
 				crd.setRecordId(crl.getId());
 				crd.setTitleId(0);
 				crd.setTitleName(xinxi.getTitleName());
@@ -135,12 +158,13 @@ public class indexController {
 				crd.setAddTime(new Date());
 				crd.setChooseIds("0");
 				crd.setChooseSort(xinxi.getRemarks());
-				chanpinRecordDetailsService.save(crd);
+				zhongyiRecordDetailsService.save(crd);
 			}
-			List<ChanpinRecordDetailsDO> titlelist = chanpin.getTitlelist();
-			for (ChanpinRecordDetailsDO chanpinRecordDetailsDO : titlelist) {
+			List<ZhongyiRecordDetailsDO> titlelist = chanpin.getTitlelist();
+			for (ZhongyiRecordDetailsDO chanpinRecordDetailsDO : titlelist) {
+				if(chanpinRecordDetailsDO.getTitleType()==null) continue;
 				if(chanpinRecordDetailsDO.getTitleType() != 4){
-					ChanpinRecordDetailsDO crd2 = new ChanpinRecordDetailsDO();
+					ZhongyiRecordDetailsDO crd2 = new ZhongyiRecordDetailsDO();
 					crd2.setRecordId(crl.getId());
 					crd2.setTitleId(chanpinRecordDetailsDO.getTitleId());
 					crd2.setTitleName(chanpinRecordDetailsDO.getTitleName());
@@ -149,7 +173,7 @@ public class indexController {
 					crd2.setAddTime(new Date());
 					crd2.setChooseIds(chanpinRecordDetailsDO.getChooseIds());
 					crd2.setChooseSort(chanpinRecordDetailsDO.getChooseSort());
-					chanpinRecordDetailsService.save(crd2);
+					zhongyiRecordDetailsService.save(crd2);
 				}
 			}
 			
@@ -171,6 +195,39 @@ public class indexController {
 	String chenggong(){
 		return "information/chenggong";
 	}
-	
+
+	/**
+	 * 获取生日
+	 * @param identityCard
+	 * @return
+	 */
+	private Date getBirthday(String identityCard) {
+		Date date = null;
+		if(identityCard!=null){
+			try {
+				String dateStr = identityCard.substring(6,14);
+				date=new SimpleDateFormat("yyyyMMdd").parse(dateStr);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		return date;
+	}
+
+	/**
+	 * 获取年龄
+	 * @return
+	 */
+	public int getAge(Date date){
+		int age =0;
+		if(date!=null){
+			Calendar calendar=  Calendar.getInstance();
+			int nowY = calendar.get(Calendar.YEAR);
+			calendar.setTime(date);
+			int birthdayY=calendar.get(Calendar.YEAR);
+			return (nowY-birthdayY);
+		}
+		return age;
+	}
 	
 }
