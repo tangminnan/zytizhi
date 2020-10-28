@@ -26,42 +26,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wenjuan5.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wenjuan3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wenjuan2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wenjuan5.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="308" column="0" lean-forward="true" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+            <state relative-caret-position="154">
+              <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1601432579561" expanded="true" signature="11920:11984" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="12126:12189" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="12771:12862" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="13157:13221" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="13380:13443" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="15190:15205" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="15229:15343" ph="..." />
-                <marker date="1601432579561" expanded="true" signature="15375:15472" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="12647:12711" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="12853:12916" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="13498:13589" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="13884:13948" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="14107:14170" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="15917:15932" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="15956:16070" ph="..." />
+                <marker date="1603857448099" expanded="true" signature="16102:16199" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="57" column="50" lean-forward="true" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,6 +98,7 @@
       <find>createNewStr</find>
       <find>tittype</find>
       <find>kong</find>
+      <find>请选择</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -115,21 +115,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiListDO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ChanpinTitleChooseDO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ChanpinRecordListDO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiRecordListDO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ChanpinRecordDetailsDO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/service/impl/ZhongyiTitleChooseServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiListMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiRecordDetailsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiTitleChooseMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiRecordListMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/information/wenjuan4.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/css.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/information/shouye2.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiRecordDetailsDO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/information/shouye.html" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiDetailsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/controller/indexController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiRecordListDO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiRecordListMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/information/shouye2.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/information/wenjuan4.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/information/shouye.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/controller/indexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/information/wenjuan5.html" />
       </list>
     </option>
@@ -175,10 +176,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="960" />
-    <option name="height" value="520" />
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -238,6 +239,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,6 +258,40 @@
               <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="liudiaowenjuan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="liudiaowenjuan" type="462c0819:PsiDirectoryNode" />
+              <item name="information" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -280,19 +317,12 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="information" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="liudiaowenjuan-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="liudiaowenjuan-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,7 +336,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/shaicha/shaicha-manager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -427,12 +457,17 @@
       <workItem from="1601001867642" duration="16148000" />
       <workItem from="1601171441823" duration="42541000" />
       <workItem from="1601282503724" duration="7229000" />
-      <workItem from="1601343072117" duration="32099000" />
+      <workItem from="1601343072117" duration="33972000" />
+      <workItem from="1602210476367" duration="927000" />
+      <workItem from="1602295506617" duration="2426000" />
+      <workItem from="1602466659733" duration="1240000" />
+      <workItem from="1603777814404" duration="8753000" />
+      <workItem from="1603850794022" duration="5145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98017000" />
+    <option name="totallyTimeSpent" value="118381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -454,12 +489,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11886587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1046892" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20352565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31410256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -497,7 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7304">
           <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -505,12 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2068">
           <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
-          <folding>
-            <marker date="1601014112928" expanded="true" signature="324:487" ph="select `id`,... t_zhongyi_record_details" />
-            <marker date="1601014112928" expanded="true" signature="2734:3086" ph="insert into t_zhongyi_record_details... " />
-            <marker date="1601014112928" expanded="true" signature="3202:3707" ph="update t_zho... " />
-            <marker date="1601014112928" expanded="true" signature="3745:3801" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -518,12 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
-          <folding>
-            <marker date="1601014051301" expanded="true" signature="306:410" ph="select `id`,... t_zhongyi_list" />
-            <marker date="1601014051301" expanded="true" signature="2199:2404" ph="insert into t_zhongyi_list... " />
-            <marker date="1601014051301" expanded="true" signature="2511:2874" ph="update t_zho... " />
-            <marker date="1601014051301" expanded="true" signature="2912:2958" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -531,14 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1601370398493" expanded="true" signature="312:427" ph="select `id`,... t_zhongyi_details" />
-            <marker date="1601370398493" expanded="true" signature="530:1204" ph="select `id`,... t_zhongyi_details" />
-            <marker date="1601370398493" expanded="true" signature="1573:2191" ph="select count... t_zhongyi_details" />
-            <marker date="1601370398493" expanded="true" signature="2347:2581" ph="insert into t_zhongyi_details... " />
-            <marker date="1601370398493" expanded="true" signature="2691:3104" ph="update t_zho... " />
-            <marker date="1601370398493" expanded="true" signature="3142:3191" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,7 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="814">
           <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -554,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -562,7 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="36" column="46" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="37" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,17 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4488">
           <caret line="204" column="37" lean-forward="false" selection-start-line="204" selection-start-column="37" selection-end-line="204" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1601432579561" expanded="true" signature="11920:11984" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12126:12189" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12771:12862" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13157:13221" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13380:13443" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15190:15205" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15229:15343" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15375:15472" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -619,12 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1342">
           <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="20" />
-          <folding>
-            <marker date="1601029685337" expanded="true" signature="318:424" ph="select `id`,... t_zhongyi_record_list" />
-            <marker date="1601029685337" expanded="true" signature="2098:2372" ph="insert into t_zhongyi_record_list... " />
-            <marker date="1601029685337" expanded="true" signature="2485:2808" ph="update t_zho... " />
-            <marker date="1601029685337" expanded="true" signature="2846:2899" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,17 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1601432579561" expanded="true" signature="11920:11984" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12126:12189" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12771:12862" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13157:13221" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13380:13443" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15190:15205" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15229:15343" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15375:15472" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -657,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,12 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1958">
           <caret line="89" column="4" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
-          <folding>
-            <marker date="1601014221318" expanded="true" signature="320:461" ph="select `id`,... t_zhongyi_title_choose" />
-            <marker date="1601014221318" expanded="true" signature="2820:3120" ph="insert into t_zhongyi_title_choose... " />
-            <marker date="1601014221318" expanded="true" signature="3234:3784" ph="update t_zho... " />
-            <marker date="1601014221318" expanded="true" signature="3822:3876" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,31 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiRecordListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1342">
-          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="20" />
-          <folding>
-            <marker date="1601029685337" expanded="true" signature="318:424" ph="select `id`,... t_zhongyi_record_list" />
-            <marker date="1601029685337" expanded="true" signature="2098:2372" ph="insert into t_zhongyi_record_list... " />
-            <marker date="1601029685337" expanded="true" signature="2485:2808" ph="update t_zho... " />
-            <marker date="1601029685337" expanded="true" signature="2846:2899" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="120" column="22" lean-forward="false" selection-start-line="119" selection-start-column="16" selection-end-line="120" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,12 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/shouye2.html" />
     <entry file="jar://D:/jingtumaven_rep/org/springframework/spring-aop/4.3.13.RELEASE/spring-aop-4.3.13.RELEASE-sources.jar!/org/springframework/aop/support/AopUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6292">
           <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,12 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2068">
           <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
-          <folding>
-            <marker date="1601014112928" expanded="true" signature="324:487" ph="select `id`,... t_zhongyi_record_details" />
-            <marker date="1601014112928" expanded="true" signature="2734:3086" ph="insert into t_zhongyi_record_details... " />
-            <marker date="1601014112928" expanded="true" signature="3202:3707" ph="update t_zho... " />
-            <marker date="1601014112928" expanded="true" signature="3745:3801" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -802,20 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
-          <folding>
-            <marker date="1601014051301" expanded="true" signature="306:410" ph="select `id`,... t_zhongyi_list" />
-            <marker date="1601014051301" expanded="true" signature="2199:2404" ph="insert into t_zhongyi_list... " />
-            <marker date="1601014051301" expanded="true" signature="2511:2874" ph="update t_zho... " />
-            <marker date="1601014051301" expanded="true" signature="2912:2958" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiRecordListDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,23 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/shouye.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="85" column="75" lean-forward="false" selection-start-line="84" selection-start-column="56" selection-end-line="86" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,13 +762,77 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="57" column="50" lean-forward="true" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="254" column="28" lean-forward="false" selection-start-line="239" selection-start-column="8" selection-end-line="254" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/dao/ZhongyiRecordListDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/domain/ZhongyiRecordListDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="22" />
+          <folding>
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#915#916#0" expanded="false" />
+            <element signature="e#960#961#0" expanded="false" />
+            <element signature="e#993#994#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiRecordListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="22" />
+          <folding>
+            <marker date="1603781277065" expanded="true" signature="318:424" ph="select `id`,... t_zhongyi_record_list" />
+            <marker date="1603781277065" expanded="true" signature="2098:2404" ph="insert into t_zhongyi_record_list... " />
+            <marker date="1603781277065" expanded="true" signature="2517:2840" ph="update t_zho... " />
+            <marker date="1603781277065" expanded="true" signature="2878:2931" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/information/ZhongyiDetailsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+        <state relative-caret-position="550">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding>
             <marker date="1601370398493" expanded="true" signature="312:427" ph="select `id`,... t_zhongyi_details" />
-            <marker date="1601370398493" expanded="true" signature="530:1204" ph="select `id`,... t_zhongyi_details" />
             <marker date="1601370398493" expanded="true" signature="1573:2191" ph="select count... t_zhongyi_details" />
             <marker date="1601370398493" expanded="true" signature="2347:2581" ph="insert into t_zhongyi_details... " />
             <marker date="1601370398493" expanded="true" signature="2691:3104" ph="update t_zho... " />
@@ -863,53 +841,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/shouye2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/service/impl/ZhongyiRecordListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+          <folding>
+            <element signature="e#961#962#0" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/shouye.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="60" lean-forward="true" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liudiaowenjuan/information/controller/indexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="93" column="48" lean-forward="true" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
+        <state relative-caret-position="396">
+          <caret line="85" column="29" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="239" column="21" lean-forward="true" selection-start-line="239" selection-start-column="21" selection-end-line="239" selection-end-column="21" />
+        <state relative-caret-position="394">
+          <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/css.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="57" column="50" lean-forward="true" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/information/wenjuan5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="308" column="0" lean-forward="true" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        <state relative-caret-position="154">
+          <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1601432579561" expanded="true" signature="11920:11984" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12126:12189" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="12771:12862" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13157:13221" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="13380:13443" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15190:15205" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15229:15343" ph="..." />
-            <marker date="1601432579561" expanded="true" signature="15375:15472" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="12647:12711" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="12853:12916" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="13498:13589" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="13884:13948" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="14107:14170" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="15917:15932" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="15956:16070" ph="..." />
+            <marker date="1603857448099" expanded="true" signature="16102:16199" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>

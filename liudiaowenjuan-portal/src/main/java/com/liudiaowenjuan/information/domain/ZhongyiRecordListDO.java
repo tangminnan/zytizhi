@@ -36,13 +36,22 @@ public class ZhongyiRecordListDO implements Serializable {
 	private String gradeclass;
 	private String address;
 	private String phone;
+	/**
+	 *  答题结束时间
+	 */
+	private Date startTime;
 
 	private List<ZhongyiRecordDetailsDO> titlelist;
 	private List<ZhongyiRecordDetailsDO> titlexinxi;
-	
-	
-	
-	
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
 	public List<ZhongyiRecordDetailsDO> getTitlexinxi() {
 		return titlexinxi;
 	}

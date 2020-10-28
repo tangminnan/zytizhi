@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import com.liudiaowenjuan.common.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,13 +51,20 @@ public class indexController {
 	String shouye(Model model,Integer id){
 
 		model.addAttribute("id",id);
+		model.addAttribute("startTime",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//记录开始答题时间
 		return "information/shouye";
 	}
 	@GetMapping("/wenjian/kaishidati")
 	String kaishidati(Model model,Integer id,String uname, String identityCard,
 					  String phone,String jiguan,
 					  String birthAddress,String homeAddress,String homeYear,
-					  Integer height,Double weight,Double yaowei
+					  Integer height,Double weight,Double yaowei,
+					  String startTime ,//记录答题的开始时间
+					  String school,
+					  String  grade,
+					  String  lass,
+					String 	  sex,
+					String 	  blood
 						){
 		model.addAttribute("id",id);
 		model.addAttribute("uname",uname);
@@ -69,7 +77,13 @@ public class indexController {
 		model.addAttribute("height",height);
 		model.addAttribute("weight",weight);
 		model.addAttribute("yaowei",yaowei);
+		model.addAttribute("startTime",startTime);
 
+		model.addAttribute("school",school);
+		model.addAttribute("grade",grade);
+		model.addAttribute("lass",lass);
+		model.addAttribute("sex",sex);
+		model.addAttribute("blood",blood);
 		Map<String,Object> map = new HashMap<>();
 		map.put("chanpinId", id);
 		int list = zhongyiDetailsService.count(map);
@@ -121,6 +135,18 @@ public class indexController {
 		return titleChooseDO;
 		
 	}
+
+	public Date getDate(String str){
+		if(StringUtils.isBlank(str))
+			str="1970-12-12 00:00:00";
+		try {
+			Date parse = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(str);
+			return  parse;
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	@PostMapping("/save/datishuju")
 	@ResponseBody
@@ -142,10 +168,13 @@ public class indexController {
 			if(xinxi.getTitleName().equals("身份证号")){
 				crl.setIdentityCard(xinxi.getRemarks());
 			}
+			if(xinxi.getTitleName().equals("答题开始时间")){
+				crl.setStartTime(getDate(xinxi.getRemarks()));
+			}
 		}
 		crl.setChanpinId(chanpin.getChanpinId());
 		crl.setChanpinName(zhongyiListService.get(chanpin.getChanpinId()).getChanpinName());
-		crl.setAddTime(new Date());
+		crl.setAddTime(new Date());//答题结束时间
 		if(zhongyiRecordListService.save(crl)>0){
 			List<ZhongyiRecordDetailsDO> titlexinxi = chanpin.getTitlexinxi();
 			for (ZhongyiRecordDetailsDO xinxi : titlexinxi) {

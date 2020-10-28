@@ -12,16 +12,22 @@
 <body class="DLbox">
 	<h3>中医体质调查问卷</h3>
 	<div class="inBox">
-		<input type="text" id="uname" placeholder="请输入“学生”姓名"/>
-		<input type="text" id="phone" placeholder="请输入您的手机号"/>
-		<input type="text" id="identityCard" placeholder="请填写学生身份证号"/>
+		<input type="text" id="school" placeholder="请填写学校"/>
+		<input type="text" id="grade" placeholder="请填写年级"/>
+		<input type="text" id="class" placeholder="请填写班级"/>
+		<input type="text" id="sex" placeholder="请填写性别"/>
+		<input type="text" id="uname" placeholder="请输入姓名"/>
+		<input type="text" id="phone" placeholder="请输入手机号"/>
+		<input type="text" id="identityCard" placeholder="请填写身份证号"/>
 		<input type="text" id="jiguan" placeholder="请填写籍贯"/>
 		<input type="text" id="birthAddress" placeholder="请输入出生地"/>
 		<input type="text" id="homeAddress" placeholder="请输入居住地"/>
 		<input type="text" id="homeYear" placeholder="请填写居住年数"/>
-		<input type="text" id="height" placeholder="请输入身高"/>
-		<input type="text" id="weight" placeholder="请输入体重"/>
-		<input type="text" id="yaowei" placeholder="请输入腰围"/>
+		<input type="text" id="height" placeholder="请填写身高"/>
+		<input type="text" id="weight" placeholder="请填写体重"/>
+		<input type="text" id="yaowei" placeholder="请填写腰围"/>
+		<input type="text" id="blood" placeholder="请填写血压"/>
+		<input type="hidden" id="startTime" th:value="${startTime}">
 	</div>
 	<dl>
 
@@ -36,11 +42,11 @@
             $("#homeAddress").hide();
             $("#homeYear").hide();
 		}
-        if($("#chanpinId").val()==2){
+        /*if($("#chanpinId").val()==2){
             $("#height").hide();
             $("#weight").hide();
             $("#yaowei").hide();
-        }
+        }*/
 		$(".btn").click(function() {
             var uname = $("input[id='uname']").val();
             var phone = $("input[id='phone']").val();
@@ -52,25 +58,40 @@
             var height = $("input[id='height']").val();
             var weight = $("input[id='weight']").val();
             var yaowei = $("input[id='yaowei']").val();
+            var startTime = $("#startTime").val();
+            var school = $("input[id='school']").val();
+            var grade = $("input[id='grade']").val();
+            var lass = $("input[id='class']").val();
+            var sex = $("input[id='sex']").val();
+            var blood = $("#blood").val();
+
+
+
+
+
+
 
             var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
             var regIdCard = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
 
-            if (uname.trim() == '' || identityCard.trim() == ''
-                || phone.trim() == '' ) {
-                alert("请填写所有信息！！！");
+            if (uname.trim() == '') {
+                alert("请填写用户名！！！");
                 return false;
             }
-            if (!regIdCard.test(identityCard)) {
-                alert("请输入正确的身份证号！！！");
+            if (phone.trim() == '' ) {
+                alert("请填写手机号！！！");
                 return false;
             }
             if (!myreg.test(phone)) {
                 alert("请输入正确的手机号码！！！");
                 return false;
             }
+            if (identityCard.trim() == '') {
+                alert("请填写身份证号！！！");
+                return false;
+            }
             var number = identityCard.substr(6,4);
-            if(number>"2020"){
+            if(!regIdCard.test(identityCard) || number>"2020"){
                 alert("请输入正确的身份证号！！！");
                 return false;
 			}
@@ -85,6 +106,12 @@
 															+"&height="+height
 															+"&weight="+weight
 															+"&yaowei="+yaowei
+															+"&startTime="+startTime
+															+"&school="+school
+															+"&grade="+grade
+															+"&lass="+lass
+															+"&sex="+sex
+															+"&blood="+blood
 
 															
 			

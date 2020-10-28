@@ -42,6 +42,11 @@
 		<input th:value="${height}" id="height" type="hidden" />
 		<input th:value="${weight}" id="weight" type="hidden" />
 		<input th:value="${yaowei}" id="yaowei" type="hidden" />
+		<input th:value="${school}" id="school" type="hidden" />
+		<input th:value="${grade}" id="grade" type="hidden" />
+		<input th:value="${lass}" id="lass" type="hidden" />
+		<input th:value="${sex}" id="sex" type="hidden" />
+		<input th:value="${blood}" id="blood" type="hidden" />
 
 
 		<input th:value="${cpchang}" id="cpchang" type="hidden" />
@@ -85,6 +90,11 @@
             {titleId:0,titleName:"身高",titleType:1,remarks:$("input[id='height']").val()},
             {titleId:0,titleName:"体重",titleType:1,remarks:$("input[id='weight']").val()},
             {titleId:0,titleName:"腰围",titleType:1,remarks:$("input[id='yaowei']").val()},
+            {titleId:0,titleName:"学校",titleType:1,remarks:$("input[id='school']").val()},
+            {titleId:0,titleName:"年级",titleType:1,remarks:$("input[id='grade']").val()},
+            {titleId:0,titleName:"班级",titleType:1,remarks:$("input[id='lass']").val()},
+            {titleId:0,titleName:"性别",titleType:1,remarks:$("input[id='sex']").val()},
+            {titleId:0,titleName:"血压",titleType:1,remarks:$("input[id='blood']").val()}
         ];
 
 
@@ -99,8 +109,8 @@
                 var lth = $(".on").length;
                 if(lth<=0){
 //                    if( $("#timuId")!=61 || $("#timuId")!=62) {
-                        alert("请选择！！！");
-                        return false;
+//                        alert("请选择！！！");
+//                        return false;
 //                    }
                 }
                 var k = 0;
