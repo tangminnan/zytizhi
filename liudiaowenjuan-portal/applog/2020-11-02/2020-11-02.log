@@ -1,0 +1,432 @@
+2020-11-02 16:29:40 -Starting BootdoApplication on WINDOWS-C9LU1JA with PID 16540 (E:\LIUDIAOWENJAIUN\liudiaowenjuan-portal\target\classes started by EDZ in E:\LIUDIAOWENJAIUN\liudiaowenjuan-portal)
+2020-11-02 16:29:40 -The following profiles are active: dev
+2020-11-02 16:29:40 -HV000001: Hibernate Validator 5.3.6.Final
+2020-11-02 16:29:40 -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@52b1beb6: startup date [Mon Nov 02 16:29:40 CST 2020]; root of context hierarchy
+2020-11-02 16:29:41 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 16:29:42 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bb3e439c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'shiroConfig' of type [com.liudiaowenjuan.system.config.ShiroConfig$$EnhancerBySpringCGLIB$$943fe5f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'userRealm' of type [com.liudiaowenjuan.system.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'ehCacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Cache with name 'com.liudiaowenjuan.system.shiro.UserRealm.authorizationCache' does not yet exist.  Creating now.
+2020-11-02 16:29:42 -Added EhCache named [com.liudiaowenjuan.system.shiro.UserRealm.authorizationCache]
+2020-11-02 16:29:42 -Bean 'sessionDAO' of type [org.apache.shiro.session.mgt.eis.MemorySessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:42 -Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:29:43 -Tomcat initialized with port(s): 8087 (http)
+2020-11-02 16:29:43 -Starting service [Tomcat]
+2020-11-02 16:29:43 -Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-11-02 16:29:43 -Initializing Spring embedded WebApplicationContext
+2020-11-02 16:29:43 -Root WebApplicationContext: initialization completed in 2291 ms
+2020-11-02 16:29:43 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'springSecurityFilterChain' to: [/*]
+2020-11-02 16:29:43 -Filter xssFilter was not registered (disabled)
+2020-11-02 16:29:43 -Mapping filter: 'webStatFilter' to urls: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'com.liudiaowenjuan.system.filter.CorsFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'remoteIpFilter' to: [/*]
+2020-11-02 16:29:43 -Mapping filter: 'shiroFilterFactoryBean' to: [/*]
+2020-11-02 16:29:43 -Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-11-02 16:29:43 -Mapping servlet: 'dispatcherServlet' to [/]
+2020-11-02 16:29:44 -{dataSource-1} inited
+2020-11-02 16:29:44 -Using default implementation for ThreadExecutor
+2020-11-02 16:29:44 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-11-02 16:29:44 -Quartz Scheduler v.2.2.1 created.
+2020-11-02 16:29:44 -RAMJobStore initialized.
+2020-11-02 16:29:44 -Scheduler meta-data: Quartz Scheduler (v2.2.1) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-11-02 16:29:44 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-11-02 16:29:44 -Quartz scheduler version: 2.2.1
+2020-11-02 16:29:44 -JobFactory set to: com.liudiaowenjuan.common.quartz.factory.JobFactory@19b75b2b
+2020-11-02 16:29:45 -Mapped "{[/common/dict/add],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.DictController.add()
+2020-11-02 16:29:45 -Mapped "{[/common/dict/remove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.DictController.remove(java.lang.Long)
+2020-11-02 16:29:45 -Mapped "{[/common/dict/batchRemove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.DictController.remove(java.lang.Long[])
+2020-11-02 16:29:45 -Mapped "{[/common/dict/update]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.DictController.update(com.liudiaowenjuan.common.domain.DictDO)
+2020-11-02 16:29:45 -Mapped "{[/common/dict/list],methods=[GET]}" onto public com.liudiaowenjuan.common.utils.PageUtils com.liudiaowenjuan.common.controller.DictController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2020-11-02 16:29:45 -Mapped "{[/common/dict/save],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.DictController.save(com.liudiaowenjuan.common.domain.DictDO)
+2020-11-02 16:29:45 -Mapped "{[/common/dict/type],methods=[GET]}" onto public java.util.List<com.liudiaowenjuan.common.domain.DictDO> com.liudiaowenjuan.common.controller.DictController.listType()
+2020-11-02 16:29:45 -Mapped "{[/common/dict/add/{type}/{description}],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.DictController.addD(org.springframework.ui.Model,java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/common/dict/list/{type}],methods=[GET]}" onto public java.util.List<com.liudiaowenjuan.common.domain.DictDO> com.liudiaowenjuan.common.controller.DictController.listByType(java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/common/dict],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.DictController.dict()
+2020-11-02 16:29:45 -Mapped "{[/common/dict/edit/{id}],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.DictController.edit(java.lang.Long,org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/add],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.FileController.add()
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/remove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.remove(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/batchRemove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.remove(java.lang.Long[])
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/update]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.update(com.liudiaowenjuan.common.domain.FileDO)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/list],methods=[GET]}" onto public com.liudiaowenjuan.common.utils.PageUtils com.liudiaowenjuan.common.controller.FileController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/save],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.save(com.liudiaowenjuan.common.domain.FileDO)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/info/{id}]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.info(java.lang.Long)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.FileController.sysFile(org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/upload],methods=[POST]}" onto com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.FileController.upload(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2020-11-02 16:29:45 -Mapped "{[/common/sysFile/edit],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.FileController.edit(java.lang.Long,org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/common/generator/update],methods=[POST]}" onto com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.GeneratorController.update(java.util.Map<java.lang.String, java.lang.Object>)
+2020-11-02 16:29:45 -Mapped "{[/common/generator/list],methods=[GET]}" onto java.util.List<java.util.Map<java.lang.String, java.lang.Object>> com.liudiaowenjuan.common.controller.GeneratorController.list()
+2020-11-02 16:29:45 -Mapped "{[/common/generator/code/{tableName}]}" onto public void com.liudiaowenjuan.common.controller.GeneratorController.code(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2020-11-02 16:29:45 -Mapped "{[/common/generator],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.GeneratorController.generator()
+2020-11-02 16:29:45 -Mapped "{[/common/generator/batchCode]}" onto public void com.liudiaowenjuan.common.controller.GeneratorController.batchCode(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.io.IOException
+2020-11-02 16:29:45 -Mapped "{[/common/generator/edit],methods=[GET]}" onto public java.lang.String com.liudiaowenjuan.common.controller.GeneratorController.edit(org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/common/job/add],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.JobController.add()
+2020-11-02 16:29:45 -Mapped "{[/common/job/remove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.remove(java.lang.Long)
+2020-11-02 16:29:45 -Mapped "{[/common/job/batchRemove],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.remove(java.lang.Long[])
+2020-11-02 16:29:45 -Mapped "{[/common/job/update],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.update(com.liudiaowenjuan.common.domain.TaskDO)
+2020-11-02 16:29:45 -Mapped "{[/common/job/list],methods=[GET]}" onto public com.liudiaowenjuan.common.utils.PageUtils com.liudiaowenjuan.common.controller.JobController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2020-11-02 16:29:45 -Mapped "{[/common/job/save],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.save(com.liudiaowenjuan.common.domain.TaskDO)
+2020-11-02 16:29:45 -Mapped "{[/common/job/info/{id}]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.info(java.lang.Long)
+2020-11-02 16:29:45 -Mapped "{[/common/job/edit/{id}],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.JobController.edit(java.lang.Long,org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/common/job],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.JobController.taskScheduleJob()
+2020-11-02 16:29:45 -Mapped "{[/common/job/changeJobStatus],methods=[POST]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.JobController.changeJobStatus(java.lang.Long,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/common/log/remove],methods=[POST]}" onto com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.LogController.remove(java.lang.Long)
+2020-11-02 16:29:45 -Mapped "{[/common/log],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.common.controller.LogController.log()
+2020-11-02 16:29:45 -Mapped "{[/common/log/list],methods=[GET]}" onto com.liudiaowenjuan.common.domain.PageDO<com.liudiaowenjuan.common.domain.LogDO> com.liudiaowenjuan.common.controller.LogController.list(java.util.Map<java.lang.String, java.lang.Object>)
+2020-11-02 16:29:45 -Mapped "{[/common/log/batchRemove],methods=[POST]}" onto com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.controller.LogController.batchRemove(java.lang.Long[])
+2020-11-02 16:29:45 -Mapped "{[/error]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.common.exception.MainsiteErrorController.handleError(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-11-02 16:29:45 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.liudiaowenjuan.common.exception.MainsiteErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-11-02 16:29:45 -Mapped "{[/index],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.information.controller.indexController.index(org.springframework.ui.Model)
+2020-11-02 16:29:45 -Mapped "{[/wenjuan/shouye],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.information.controller.indexController.shouye(org.springframework.ui.Model,java.lang.Integer)
+2020-11-02 16:29:45 -Mapped "{[/wenjian/kaishidati],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.information.controller.indexController.kaishidati(org.springframework.ui.Model,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Double,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/querywenjuan/chanpinDetails],methods=[GET]}" onto java.util.List<com.liudiaowenjuan.information.domain.ZhongyiDetailsDO> com.liudiaowenjuan.information.controller.indexController.chanpinDetails(java.lang.Integer)
+2020-11-02 16:29:45 -Mapped "{[/querywenjuan/titleDetails],methods=[GET]}" onto java.util.List<com.liudiaowenjuan.information.domain.ZhongyiTitleChooseDO> com.liudiaowenjuan.information.controller.indexController.titleDetails(java.lang.Integer)
+2020-11-02 16:29:45 -Mapped "{[/wenjian/timuxiangq],methods=[GET]}" onto java.util.List<java.util.Map<java.lang.String, java.lang.Object>> com.liudiaowenjuan.information.controller.indexController.timuxiangq(java.lang.Integer)
+2020-11-02 16:29:45 -Mapped "{[/save/datishuju],methods=[POST]}" onto java.util.Map<java.lang.String, java.lang.Object> com.liudiaowenjuan.information.controller.indexController.datishuju(com.liudiaowenjuan.information.domain.ZhongyiRecordListDO)
+2020-11-02 16:29:45 -Mapped "{[/shaichawenjuan/tijiaochenggong],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.information.controller.indexController.chenggong()
+2020-11-02 16:29:45 -Mapped "{[/shaichawenjuan/jiazai],methods=[GET]}" onto java.lang.String com.liudiaowenjuan.information.controller.indexController.jiazai()
+2020-11-02 16:29:45 -Mapped "{[/register],methods=[POST]}" onto java.util.Map<java.lang.String, java.lang.String> com.liudiaowenjuan.owneruser.controller.LoginController.register(java.lang.String,java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/loginC],methods=[POST]}" onto java.util.Map<java.lang.String, java.lang.Object> com.liudiaowenjuan.owneruser.controller.LoginController.loginC(java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/logout],methods=[GET]}" onto java.util.Map<java.lang.String, java.lang.String> com.liudiaowenjuan.owneruser.controller.LoginController.logout()
+2020-11-02 16:29:45 -Mapped "{[/loginP],methods=[POST]}" onto java.util.Map<java.lang.String, java.lang.Object> com.liudiaowenjuan.owneruser.controller.LoginController.loginP(java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/captcha],methods=[GET]}" onto static java.util.Map<java.lang.String, java.lang.String> com.liudiaowenjuan.owneruser.controller.LoginController.getSms(java.lang.String,java.lang.String)
+2020-11-02 16:29:45 -Mapped "{[/sys/online/list]}" onto public java.util.List<com.liudiaowenjuan.system.domain.UserOnline> com.liudiaowenjuan.system.controller.SessionController.list()
+2020-11-02 16:29:45 -Mapped "{[/sys/online/sessionList]}" onto public java.util.Collection<org.apache.shiro.session.Session> com.liudiaowenjuan.system.controller.SessionController.sessionList()
+2020-11-02 16:29:45 -Mapped "{[/sys/online],methods=[GET]}" onto public java.lang.String com.liudiaowenjuan.system.controller.SessionController.online()
+2020-11-02 16:29:45 -Mapped "{[/sys/online/forceLogout/{sessionId}]}" onto public com.liudiaowenjuan.common.utils.R com.liudiaowenjuan.system.controller.SessionController.forceLogout(java.lang.String,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2020-11-02 16:29:45 -Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2020-11-02 16:29:45 -Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2020-11-02 16:29:45 -Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2020-11-02 16:29:45 -Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2020-11-02 16:29:45 -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@52b1beb6: startup date [Mon Nov 02 16:29:40 CST 2020]; root of context hierarchy
+2020-11-02 16:29:45 -Mapped URL path [/files/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-11-02 16:29:45 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-11-02 16:29:45 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-11-02 16:29:45 -Detected @ExceptionHandler methods in BDExceptionHandler
+2020-11-02 16:29:45 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-11-02 16:29:46 -
+
+Using default security password: af460a4c-76e3-4c33-96fd-0f7139f6bf20
+
+2020-11-02 16:29:46 -Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2020-11-02 16:29:46 -Creating filter chain: org.springframework.boot.autoconfigure.security.SpringBootWebSecurityConfiguration$ApplicationNoWebSecurityConfigurerAdapter$1@628b503a, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2558f65c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ee456c7, org.springframework.security.web.header.HeaderWriterFilter@37f71c05, org.springframework.security.web.csrf.CsrfFilter@3c7d8a4, org.springframework.security.web.authentication.logout.LogoutFilter@2bb3f39e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@106459d9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a01ffff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11c3ce6a, org.springframework.security.web.session.SessionManagementFilter@42503099, org.springframework.security.web.access.ExceptionTranslationFilter@3f4a605f]
+2020-11-02 16:29:46 -Registering beans for JMX exposure on startup
+2020-11-02 16:29:46 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-11-02 16:29:46 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-11-02 16:29:46 -Starting beans in phase 2147483647
+2020-11-02 16:29:46 -Context refreshed
+2020-11-02 16:29:46 -Found 1 custom documentation plugin(s)
+2020-11-02 16:29:46 -Scanning for api listing references
+2020-11-02 16:29:46 -Generating unique operation named: removeUsingPOST_1
+2020-11-02 16:29:47 -Generating unique operation named: addUsingGET_1
+2020-11-02 16:29:47 -Generating unique operation named: editUsingGET_1
+2020-11-02 16:29:47 -Generating unique operation named: listUsingGET_1
+2020-11-02 16:29:47 -Generating unique operation named: removeUsingPOST_2
+2020-11-02 16:29:47 -Generating unique operation named: removeUsingPOST_3
+2020-11-02 16:29:47 -Generating unique operation named: saveUsingPOST_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingGET_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingHEAD_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingPOST_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingPUT_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingPATCH_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingDELETE_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingOPTIONS_1
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingTRACE_1
+2020-11-02 16:29:47 -Generating unique operation named: editUsingGET_2
+2020-11-02 16:29:47 -Generating unique operation named: listUsingGET_2
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingPOST_2
+2020-11-02 16:29:47 -Generating unique operation named: addUsingGET_2
+2020-11-02 16:29:47 -Generating unique operation named: editUsingGET_3
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingGET_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingHEAD_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingPOST_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingPUT_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingPATCH_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingDELETE_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingOPTIONS_1
+2020-11-02 16:29:47 -Generating unique operation named: infoUsingTRACE_1
+2020-11-02 16:29:47 -Generating unique operation named: listUsingGET_3
+2020-11-02 16:29:47 -Generating unique operation named: removeUsingPOST_4
+2020-11-02 16:29:47 -Generating unique operation named: removeUsingPOST_5
+2020-11-02 16:29:47 -Generating unique operation named: saveUsingPOST_2
+2020-11-02 16:29:47 -Generating unique operation named: updateUsingPOST_3
+2020-11-02 16:29:47 -Generating unique operation named: listUsingGET_4
+2020-11-02 16:29:47 -Generating unique operation named: removeUsingPOST_6
+2020-11-02 16:29:47 -Generating unique operation named: listUsingGET_5
+2020-11-02 16:29:47 -Starting Quartz Scheduler now
+2020-11-02 16:29:47 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-11-02 16:29:47 -Initializing ProtocolHandler ["http-nio-8087"]
+2020-11-02 16:29:47 -Starting ProtocolHandler ["http-nio-8087"]
+2020-11-02 16:29:47 -Using a shared selector for servlet write/read
+2020-11-02 16:29:47 -Tomcat started on port(s): 8087 (http)
+2020-11-02 16:29:47 -Started BootdoApplication in 6.976 seconds (JVM running for 7.675)
+2020-11-02 16:30:27 -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-11-02 16:30:27 -FrameworkServlet 'dispatcherServlet': initialization started
+2020-11-02 16:30:27 -FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2020-11-02 16:30:27 -Enabling session validation scheduler...
+2020-11-02 16:30:27 -请求地址 : http://localhost:8087/index
+2020-11-02 16:30:27 -HTTP METHOD : GET
+2020-11-02 16:30:27 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 16:30:27 -参数 : [{}]
+2020-11-02 16:30:28 -耗时 : 49
+2020-11-02 16:30:28 -[THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-11-02 16:30:28 -[THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+2020-11-02 16:30:28 -[THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-11-02 16:30:28 -[THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-11-02 16:30:28 -[THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-11-02 16:30:28 -[THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 3]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 3]: at.pollux.thymeleaf.shiro.dialect.ShiroDialect
+[THYMELEAF]     * Prefix: "shiro"
+[THYMELEAF] * Dialect [3 of 3]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+2020-11-02 16:30:28 -[THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-11-02 16:30:41 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:30:41 -HTTP METHOD : GET
+2020-11-02 16:30:41 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:30:41 -参数 : [{}, 2]
+2020-11-02 16:30:41 -耗时 : 1
+2020-11-02 16:36:10 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:36:10 -HTTP METHOD : GET
+2020-11-02 16:36:10 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:36:10 -参数 : [{}, 2]
+2020-11-02 16:36:10 -耗时 : 1
+2020-11-02 16:38:34 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 16:38:34 -HTTP METHOD : GET
+2020-11-02 16:38:34 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 16:38:34 -参数 : [{}, 2, 邹营, 370983198601021377, 13964193900, 山东省泰安市, 山东省泰安市, 山东省济南市, , null, null, null, 2020-11-02 16:36:10, 北仪仙中学, 三年级, 2班, 男, ]
+2020-11-02 16:38:34 -耗时 : 56
+2020-11-02 16:38:34 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 16:38:34 -HTTP METHOD : GET
+2020-11-02 16:38:34 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 16:38:34 -参数 : [2]
+2020-11-02 16:38:36 -耗时 : 2300
+2020-11-02 16:42:22 -请求地址 : http://localhost:8087/index
+2020-11-02 16:42:22 -HTTP METHOD : GET
+2020-11-02 16:42:22 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 16:42:22 -参数 : [{}]
+2020-11-02 16:42:23 -耗时 : 50
+2020-11-02 16:42:27 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:42:27 -HTTP METHOD : GET
+2020-11-02 16:42:27 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:42:27 -参数 : [{}, 2]
+2020-11-02 16:42:27 -耗时 : 1
+2020-11-02 16:42:47 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 16:42:47 -HTTP METHOD : GET
+2020-11-02 16:42:47 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 16:42:47 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 16:42:27, 1, 1, 1, 1, ]
+2020-11-02 16:42:47 -耗时 : 26
+2020-11-02 16:42:47 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 16:42:47 -HTTP METHOD : GET
+2020-11-02 16:42:47 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 16:42:47 -参数 : [2]
+2020-11-02 16:42:49 -耗时 : 2162
+2020-11-02 16:47:35 -请求地址 : http://localhost:8087/index
+2020-11-02 16:47:35 -HTTP METHOD : GET
+2020-11-02 16:47:35 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 16:47:35 -参数 : [{}]
+2020-11-02 16:47:35 -耗时 : 44
+2020-11-02 16:47:38 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:47:38 -HTTP METHOD : GET
+2020-11-02 16:47:38 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:47:38 -参数 : [{}, 2]
+2020-11-02 16:47:38 -耗时 : 1
+2020-11-02 16:47:56 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 16:47:56 -HTTP METHOD : GET
+2020-11-02 16:47:56 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 16:47:56 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 16:47:38, 1, 1, 1, 1, ]
+2020-11-02 16:47:56 -耗时 : 20
+2020-11-02 16:47:56 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 16:47:56 -HTTP METHOD : GET
+2020-11-02 16:47:56 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 16:47:56 -参数 : [2]
+2020-11-02 16:47:58 -耗时 : 2026
+2020-11-02 16:50:47 -请求地址 : http://localhost:8087/index
+2020-11-02 16:50:47 -HTTP METHOD : GET
+2020-11-02 16:50:47 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 16:50:47 -参数 : [{}]
+2020-11-02 16:50:48 -耗时 : 43
+2020-11-02 16:50:50 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:50:50 -HTTP METHOD : GET
+2020-11-02 16:50:50 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:50:50 -参数 : [{}, 2]
+2020-11-02 16:50:50 -耗时 : 1
+2020-11-02 16:51:07 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 16:51:07 -HTTP METHOD : GET
+2020-11-02 16:51:07 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 16:51:07 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 16:50:50, 1, 1, 1, 1, ]
+2020-11-02 16:51:07 -耗时 : 91
+2020-11-02 16:51:07 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 16:51:07 -HTTP METHOD : GET
+2020-11-02 16:51:07 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 16:51:07 -参数 : [2]
+2020-11-02 16:51:10 -耗时 : 3291
+2020-11-02 16:53:45 -请求地址 : http://localhost:8087/index
+2020-11-02 16:53:45 -HTTP METHOD : GET
+2020-11-02 16:53:45 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 16:53:45 -参数 : [{}]
+2020-11-02 16:53:45 -耗时 : 72
+2020-11-02 16:53:48 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 16:53:48 -HTTP METHOD : GET
+2020-11-02 16:53:48 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 16:53:48 -参数 : [{}, 2]
+2020-11-02 16:53:48 -耗时 : 0
+2020-11-02 16:54:24 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 16:54:24 -HTTP METHOD : GET
+2020-11-02 16:54:24 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 16:54:24 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, 1, 1, , , null, null, null, 2020-11-02 16:53:48, 1, 1, 1, 11, ]
+2020-11-02 16:54:24 -耗时 : 85
+2020-11-02 16:54:24 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 16:54:24 -HTTP METHOD : GET
+2020-11-02 16:54:24 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 16:54:24 -参数 : [2]
+2020-11-02 16:54:27 -耗时 : 2668
+2020-11-02 17:08:58 -请求地址 : http://localhost:8087/index
+2020-11-02 17:08:58 -HTTP METHOD : GET
+2020-11-02 17:08:58 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:08:58 -参数 : [{}]
+2020-11-02 17:08:58 -耗时 : 54
+2020-11-02 17:09:02 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:09:02 -HTTP METHOD : GET
+2020-11-02 17:09:02 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:09:02 -参数 : [{}, 2]
+2020-11-02 17:09:02 -耗时 : 0
+2020-11-02 17:09:21 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 17:09:21 -HTTP METHOD : GET
+2020-11-02 17:09:21 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 17:09:21 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 17:09:02, 1, 1, 1, 1, ]
+2020-11-02 17:09:22 -耗时 : 26
+2020-11-02 17:09:22 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 17:09:22 -HTTP METHOD : GET
+2020-11-02 17:09:22 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 17:09:22 -参数 : [2]
+2020-11-02 17:09:24 -耗时 : 2022
+2020-11-02 17:11:33 -请求地址 : http://localhost:8087/index
+2020-11-02 17:11:33 -HTTP METHOD : GET
+2020-11-02 17:11:33 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:11:33 -参数 : [{}]
+2020-11-02 17:11:33 -耗时 : 40
+2020-11-02 17:11:36 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:11:36 -HTTP METHOD : GET
+2020-11-02 17:11:36 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:11:36 -参数 : [{}, 2]
+2020-11-02 17:11:36 -耗时 : 1
+2020-11-02 17:13:05 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 17:13:05 -HTTP METHOD : GET
+2020-11-02 17:13:05 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 17:13:05 -参数 : [{}, 2, 邹营, 370983198601021377, 13964193900, 泰安市, 泰安市, 济南市, 4年, 172, 65.0, 39.0, 2020-11-02 17:11:36, 北仪仙中学, 二年级, 1班, 男, ]
+2020-11-02 17:13:05 -耗时 : 49
+2020-11-02 17:13:05 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 17:13:05 -HTTP METHOD : GET
+2020-11-02 17:13:05 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 17:13:05 -参数 : [2]
+2020-11-02 17:13:07 -耗时 : 2044
+2020-11-02 17:15:44 -请求地址 : http://localhost:8087/index
+2020-11-02 17:15:44 -HTTP METHOD : GET
+2020-11-02 17:15:44 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:15:44 -参数 : [{}]
+2020-11-02 17:15:44 -耗时 : 46
+2020-11-02 17:15:46 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:15:46 -HTTP METHOD : GET
+2020-11-02 17:15:46 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:15:46 -参数 : [{}, 2]
+2020-11-02 17:15:46 -耗时 : 0
+2020-11-02 17:16:04 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 17:16:04 -HTTP METHOD : GET
+2020-11-02 17:16:04 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 17:16:04 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 17:15:46, 1, 1, 1, 1, ]
+2020-11-02 17:16:04 -耗时 : 22
+2020-11-02 17:16:04 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 17:16:04 -HTTP METHOD : GET
+2020-11-02 17:16:04 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 17:16:04 -参数 : [2]
+2020-11-02 17:16:06 -耗时 : 2525
+2020-11-02 17:17:36 -请求地址 : http://localhost:8087/index
+2020-11-02 17:17:36 -HTTP METHOD : GET
+2020-11-02 17:17:36 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:17:36 -参数 : [{}]
+2020-11-02 17:17:36 -耗时 : 47
+2020-11-02 17:17:39 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:17:39 -HTTP METHOD : GET
+2020-11-02 17:17:39 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:17:39 -参数 : [{}, 2]
+2020-11-02 17:17:39 -耗时 : 0
+2020-11-02 17:26:45 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 17:26:45 -HTTP METHOD : GET
+2020-11-02 17:26:45 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 17:26:45 -参数 : [{}, 2, 1, 370983198601021377, 13964193900, , , , , null, null, null, 2020-11-02 17:17:39, 1, 1, 1, 1, ]
+2020-11-02 17:26:45 -耗时 : 41
+2020-11-02 17:26:45 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 17:26:45 -HTTP METHOD : GET
+2020-11-02 17:26:45 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 17:26:45 -参数 : [2]
+2020-11-02 17:26:47 -耗时 : 1877
+2020-11-02 17:27:52 -请求地址 : http://localhost:8087/index
+2020-11-02 17:27:52 -HTTP METHOD : GET
+2020-11-02 17:27:52 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:27:52 -参数 : [{}]
+2020-11-02 17:27:52 -耗时 : 41
+2020-11-02 17:27:55 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:27:55 -HTTP METHOD : GET
+2020-11-02 17:27:55 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:27:55 -参数 : [{}, 2]
+2020-11-02 17:27:55 -耗时 : 0
+2020-11-02 17:30:27 -Validating all active sessions...
+2020-11-02 17:30:27 -Finished session validation.  No sessions were stopped.
+2020-11-02 17:31:19 -请求地址 : http://localhost:8087/wenjian/kaishidati
+2020-11-02 17:31:19 -HTTP METHOD : GET
+2020-11-02 17:31:19 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.kaishidati
+2020-11-02 17:31:19 -参数 : [{}, 2, 邹营, 370983198601021377, 13964193900, 济南市, 泰安, 建安, , null, null, null, 2020-11-02 17:27:55, 北仪仙中学, 四年级, 2班, 男, ]
+2020-11-02 17:31:19 -耗时 : 49
+2020-11-02 17:31:19 -请求地址 : http://localhost:8087/wenjian/timuxiangq
+2020-11-02 17:31:19 -HTTP METHOD : GET
+2020-11-02 17:31:19 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.timuxiangq
+2020-11-02 17:31:19 -参数 : [2]
+2020-11-02 17:31:21 -耗时 : 2031
+2020-11-02 17:33:42 -请求地址 : http://localhost:8087/save/datishuju
+2020-11-02 17:33:42 -HTTP METHOD : POST
+2020-11-02 17:33:42 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.datishuju
+2020-11-02 17:33:42 -参数 : [com.liudiaowenjuan.information.domain.ZhongyiRecordListDO@356f1b5c]
+2020-11-02 17:33:47 -耗时 : 4809
+2020-11-02 17:33:47 -请求地址 : http://localhost:8087/shaichawenjuan/tijiaochenggong
+2020-11-02 17:33:47 -HTTP METHOD : GET
+2020-11-02 17:33:47 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.chenggong
+2020-11-02 17:33:47 -参数 : []
+2020-11-02 17:33:47 -耗时 : 0
+2020-11-02 17:34:27 -请求地址 : http://localhost:8087/index
+2020-11-02 17:34:27 -HTTP METHOD : GET
+2020-11-02 17:34:27 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.index
+2020-11-02 17:34:27 -参数 : [{}]
+2020-11-02 17:34:27 -耗时 : 22
+2020-11-02 17:34:29 -请求地址 : http://localhost:8087/wenjuan/shouye
+2020-11-02 17:34:29 -HTTP METHOD : GET
+2020-11-02 17:34:29 -CLASS_METHOD : com.liudiaowenjuan.information.controller.indexController.shouye
+2020-11-02 17:34:29 -参数 : [{}, 1]
+2020-11-02 17:34:29 -耗时 : 0
