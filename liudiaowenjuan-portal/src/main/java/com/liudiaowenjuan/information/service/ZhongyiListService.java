@@ -3,6 +3,7 @@ package com.liudiaowenjuan.information.service;
 import java.util.List;
 import java.util.Map;
 
+import com.liudiaowenjuan.information.domain.StudentDO;
 import com.liudiaowenjuan.information.domain.ZhongyiListDO;
 
 /**
@@ -27,4 +28,6 @@ public interface ZhongyiListService {
 	int remove(Integer id);
 	
 	int batchRemove(Integer[] ids);
+
+    StudentDO getInfo(String id);
 }

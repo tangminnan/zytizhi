@@ -3,6 +3,7 @@ package com.liudiaowenjuan.information.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.liudiaowenjuan.information.domain.StudentDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.liudiaowenjuan.information.domain.ZhongyiListDO;
@@ -29,4 +30,6 @@ public interface ZhongyiListDao {
 	int remove(Integer id);
 	
 	int batchRemove(Integer[] ids);
+
+    StudentDO getInfo(String id);
 }

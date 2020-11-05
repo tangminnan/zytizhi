@@ -1,10 +1,14 @@
 package com.liudiaowenjuan.information.controller;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.liudiaowenjuan.common.utils.StringUtils;
+import com.liudiaowenjuan.common.utils.WeiScanUtils;
+import com.liudiaowenjuan.common.utils.WeiScanUtils2;
+import com.liudiaowenjuan.information.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.liudiaowenjuan.information.domain.ZhongyiDetailsDO;
-import com.liudiaowenjuan.information.domain.ZhongyiListDO;
-import com.liudiaowenjuan.information.domain.ZhongyiRecordDetailsDO;
-import com.liudiaowenjuan.information.domain.ZhongyiRecordListDO;
-import com.liudiaowenjuan.information.domain.ZhongyiTitleChooseDO;
 import com.liudiaowenjuan.information.service.ZhongyiDetailsService;
 import com.liudiaowenjuan.information.service.ZhongyiListService;
 import com.liudiaowenjuan.information.service.ZhongyiRecordDetailsService;
@@ -48,7 +47,11 @@ public class indexController {
 	}
 
 	@GetMapping("/wenjuan/shouye")
-	String shouye(Model model,Integer id){
+	String shouye(Model model,Integer id) throws IOException {
+		Map<String,Object> map = WeiScanUtils2.sign("http://zywenjuan.dddmaker.com/wenjuan/shouye?id="+id);
+		model.addAttribute("timestamp",map.get("timestam"));
+		model.addAttribute("nonceStr",map.get("nonceSt"));
+		model.addAttribute("signature",map.get("signatur"));
 
 		model.addAttribute("id",id);
 		model.addAttribute("startTime",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));//记录开始答题时间
@@ -58,7 +61,7 @@ public class indexController {
 	String kaishidati(Model model,Integer id,String uname, String identityCard,
 					  String phone,String jiguan,
 					  String birthAddress,String homeAddress,String homeYear,
-					  Integer height,Double weight,Double yaowei,
+					  String height,String weight,String yaowei,
 					  String startTime ,//记录答题的开始时间
 					  String school,
 					  String  grade,
@@ -258,5 +261,23 @@ public class indexController {
 		}
 		return age;
 	}
-	
+
+	@GetMapping("/wenjuan/shouye/getInfo")
+	@ResponseBody
+	public StudentDO getInfo(String id){
+		id=id.split("JOIN")[0];
+		System.out.println("==================================");
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println("===================================");
+		StudentDO studentDO  =  zhongyiListService.getInfo(id);
+		if(studentDO.getPhone()!=null){
+			studentDO.setPhone(studentDO.getPhone().substring(0,11));
+		}
+		return studentDO;
+	}
 }

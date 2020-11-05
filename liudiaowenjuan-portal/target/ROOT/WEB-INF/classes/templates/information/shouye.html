@@ -8,10 +8,24 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 <title>中医体质调查问卷</title>
+	<style>
+		.btn{
+			width: 30%;
+			font-size: .25rem;
+			border-radius: .5rem;
+			float-right:right;
+		}
+	</style>
+	<script type="text/javascript">
+        define = null;
+        require = null;
+	</script>
 </head>
 <body class="DLbox">
 	<h3>中医体质调查问卷</h3>
+	<button type="button" id="scanQRCode" class="btn btn-success btn-xs">扫一扫</button>
 	<div class="inBox">
+
 		<input type="text" id="school" placeholder="请填写学校"/>
 		<input type="text" id="grade" placeholder="请填写年级"/>
 		<input type="text" id="class" placeholder="请填写班级"/>
@@ -28,11 +42,15 @@
 		<input type="text" id="yaowei" placeholder="请填写腰围"/>
 		<!--<input type="text" id="blood" placeholder="请填写血压"/>-->
 		<input type="hidden" id="startTime" th:value="${startTime}">
+
+		<input type="hidden" id="timestamp" th:value="${timestamp}">
+		<input type="hidden" id="nonceStr" th:value="${nonceStr}">
+		<input type="hidden" id="signature" th:value="${signature}">
 	</div>
 	<dl>
 
 	</dl>
-	<input class="btn" type="button" value="开始答题"/>
+	<input class="btn" id="kt" type="button" value="开始答题"/>
 	<input th:value = "${id}" id="chanpinId"  type="hidden" />
 	<div th:include="include::footer"></div>
 	<script type="text/javascript">
@@ -47,7 +65,7 @@
             $("#weight").hide();
             $("#yaowei").hide();
         }*/
-		$(".btn").click(function() {
+		$("#kt").click(function() {
             var uname = $("input[id='uname']").val();
             var phone = $("input[id='phone']").val();
             var identityCard = $("input[id='identityCard']").val();
@@ -126,6 +144,64 @@
 //    	});
         });
 	</script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+	<script>
+
+		document.querySelector('#scanQRCode').onclick = function() {
+            wx.config({
+                debug: false,
+                appId: 'wxa6898d89801a6fa5',
+                timestamp:$("#timestamp").val(),
+                nonceStr:$("#nonceStr").val(),
+                signature:$("#signature").val(),
+                jsApiList : [ 'checkJsApi', 'scanQRCode' ]
+            });
+            wx.error(function(res) {
+                alert("出错了：" + res.errMsg);
+            });
+            wx.ready(function() {
+                wx.checkJsApi({
+                    jsApiList: ['scanQRCode'],
+                    success: function (res) {
+
+                    }
+                });
+            });
+            wx.scanQRCode({
+                needResult : 1,
+                scanType : [ "qrCode" ], // 可以指定扫二维码还是一维码，默认二者都有
+                success : function(res) {
+                    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                    /**
+					 *  扫码 成功 查询信息
+                     */
+                    $.ajax({
+                        type: "GET",
+                        url: "/wenjuan/shouye/getInfo",
+                        data: {id:result},
+                        success: function(r){
+                           if(r!=null){
+                               $("#school").val(r.school);
+                               $("#grade").val(r.grade);
+                               $("#class").val(r.studentClass);
+                               $("#sex").val(r.studentSex==1?'男':'女');
+                               $("#uname").val(r.studentName);
+                               $("#phone").val(r.phone);
+                               $("#identityCard").val(r.identityCard);
+                               $("#height").val(r.height);
+                               $("#weight").val(r.weight);
+                               $("#homeAddress").val(r.address);
+						   }
+                        }
+                    });
+                }
+            });
+        };
+
+
+
+</script>
 	
 </body>
 </html>

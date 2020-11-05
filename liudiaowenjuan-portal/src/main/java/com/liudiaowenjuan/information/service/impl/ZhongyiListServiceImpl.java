@@ -1,5 +1,6 @@
 package com.liudiaowenjuan.information.service.impl;
 
+import com.liudiaowenjuan.information.domain.StudentDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,5 +52,11 @@ public class ZhongyiListServiceImpl implements ZhongyiListService {
 	public int batchRemove(Integer[] ids){
 		return chanpinListDao.batchRemove(ids);
 	}
-	
+
+	@Override
+	public StudentDO getInfo(String id) {
+		return chanpinListDao.getInfo(id);
+
+	}
+
 }
