@@ -15,7 +15,10 @@ import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
+/**
+ *  微信扫一扫 获取数据库用户信息
+ *  工具类2
+ */
 public class WeiScanUtils2 {
 
     /**

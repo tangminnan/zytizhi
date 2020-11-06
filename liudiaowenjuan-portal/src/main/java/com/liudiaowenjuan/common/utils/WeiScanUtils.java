@@ -17,7 +17,7 @@ import java.util.UUID;
 
 /**
  *  微信扫一扫 获取数据库用户信息
- *  工具类
+ *  工具类1
  */
 public class WeiScanUtils {
     /**
